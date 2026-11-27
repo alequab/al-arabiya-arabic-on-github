@@ -303,6 +303,12 @@ class Pictures(unittest.TestCase):
         with self.assertRaises(ValueError):
             typing_svg.build(["سطر", " "])
 
+    def test_still(self):
+        svg = typing_svg.build(["سطر أول", "سطر ثان"], width=500, height=60, still=True)
+        self.assertNotIn("<animate", svg)
+        self.assertIn("height='120'", svg)                                  # two lines, one under the other
+        self.assertEqual(svg.count("<text"), 2)
+
     def test_controls_not_counted(self):
         self.assertEqual(typing_svg.CONTROLS.sub("", "\u2067نص\u2069"), "نص")
 

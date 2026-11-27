@@ -5,7 +5,7 @@
 Each line is shown whole and uncovered from right to left, then rubbed out again from its end, so letters keep their
 joined shapes. --font takes a Google Fonts family: only the letters used are downloaded and built into the picture,
 so every reader sees that font. Without --font the reader's own Arabic font is used. --once types the first line a
-single time and leaves it shown.
+single time and leaves it shown. --still draws all lines at once, one under the other, with no animation.
 """
 import argparse
 import base64
@@ -35,10 +35,24 @@ def font_face(family, text, weight=400):
 
 
 def build(lines, width=600, height=70, size=34, color="#36BCF7", font=None, face="", type_ms=2200, pause_ms=1600,
-          erase_ms=700, once=False):
-    """Return the SVG text. face is an @font-face rule (font_face()) or ''."""
+          erase_ms=700, once=False, still=False):
+    """Return the SVG text. face is an @font-face rule (font_face()) or ''. still: no animation, the lines stacked
+    one under the other (height is per line)."""
     if not lines or not all(x.strip() for x in lines):
         raise ValueError("every line needs text")
+    if still:
+        family = (f"'{font}', " if font else "") + "'Segoe UI', 'Noto Naskh Arabic', Tahoma, sans-serif"
+        h = height * len(lines)
+        out = [f"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {width} {h}' width='{width}' height='{h}' "
+               f"role='img' aria-label='{escape(' '.join(lines))}'>"]
+        if face:
+            out.append(f"<style>{face}</style>")
+        for i, line in enumerate(lines):
+            out.append(f"<text x='{width / 2}' y='{height * i + height / 2}' text-anchor='middle' "
+                       f"dominant-baseline='central' direction='rtl' font-family=\"{family}\" font-size='{size}' "
+                       f"fill='{escape(color)}'>{escape(line)}</text>")
+        out.append("</svg>")
+        return "\n".join(out) + "\n"
     if once:
         lines = lines[:1]
     w, h = width, height
@@ -82,10 +96,11 @@ def main(argv=None):
     p.add_argument("--width", type=int, default=600)
     p.add_argument("--height", type=int, default=70)
     p.add_argument("--once", action="store_true", help="type the first line once and keep it")
+    p.add_argument("--still", action="store_true", help="no animation: all lines shown, one under the other")
     p.add_argument("--out", required=True)
     a = p.parse_args(argv)
     face = font_face(a.font, "".join(a.line), a.weight) if a.font else ""
-    svg = build(a.line, a.width, a.height, a.size, a.color, a.font, face, once=a.once)
+    svg = build(a.line, a.width, a.height, a.size, a.color, a.font, face, once=a.once, still=a.still)
     with open(a.out, "w", encoding="utf-8", newline="\n") as f:
         f.write(svg)
     print(f"{a.out}: {len(svg)} bytes")
