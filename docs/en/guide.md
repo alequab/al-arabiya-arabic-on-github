@@ -287,9 +287,10 @@ sort last. ([T41](../../tests/lab.md#t41), [T42](../../tests/lab.md#t42))
 
 ### Search
 
-Search finds Arabic words in code, issues and pull requests, but matches letters exactly: a word written with
+Search finds Arabic words in code, issues, pull requests, commit titles (default branch only) and wiki pages, but
+matches letters exactly: a word written with
 tatweel (المـــفتاح) or vowel marks (المِصْباح) is not found by its plain spelling, nor the other way round. Keep
-both out of titles and words people will search for. ([T40](../../tests/lab.md#t40))
+both out of titles and words people will search for. ([T40](../../tests/lab.md#t40), [T43](../../tests/lab.md#t43))
 
 ### Release notes
 
@@ -350,7 +351,7 @@ The Android app draws less than the website (checked on this repo, November 2026
 | `align="right"` | Text moves right but stays left to right, so its order is scrambled. Use `dir="rtl"` ([T33](../../tests/lab.md#t33)) |
 | `<p dir="rtl">` | Works, for one paragraph ([T33](../../tests/lab.md#t33)) |
 | Arabic in a GitHub alert | Left to right unless wrapped in `<p dir="rtl">` ([T29](../../tests/lab.md#t29), [T35](../../tests/lab.md#t35)) |
-| A centered line mixing Arabic and English | Order scrambled: give the element `dir="rtl"`, e.g. `<h4 dir="rtl">` |
+| A centered line mixing Arabic and English | Order scrambled: give the element `dir="rtl"`, e.g. `<h4 dir="rtl">`. If the Arabic part ends with a Latin word, put `&rlm;` after it: `العربية على GitHub&rlm; · Arabic on GitHub` |
 | GitHub's footnote list, loose lists | Footnotes left to right (avoid them); loose lists are fine in the app |
 | Arabic inside the RTL div, lists, release titles | Fine |
 
@@ -366,6 +367,9 @@ of a page for a while: pull down to refresh before judging a change.
    ```powershell
    python code/check_arabic_md.py README.md docs
    ```
+
+   Put a deliberate mistake (a "before" example) between `<!-- check-arabic: off -->` and
+   `<!-- check-arabic: on -->`: the checker still reads it but does not report it.
 
 2. Render with GitHub's API before pushing (catches alerts that did not render):
    `gh api -X POST markdown -f mode=gfm -F text=@README.md`.

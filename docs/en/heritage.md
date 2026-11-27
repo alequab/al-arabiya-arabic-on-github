@@ -13,7 +13,7 @@ Marks: ✔ works · ⚠ works with a flaw · ✘ doesn't work
 
 | Part | Verdict | How |
 |---|---|---|
-| Opening (فاتحة) | ✔ | Bismillah and the prayer as centered `<h3 dir="rtl">` lines, then «أما بعد» |
+| Opening (فاتحة) | ✔ | Bismillah and the blessing on the Prophet as centered `<h3 dir="rtl">` lines, then «أما بعد». In a chosen font (Kufic, as in this repo's README): one `<img>` made by `code/typing_svg.py --still`, the text in alt |
 | Dividers | ✔ | A line of ornaments in `<div align="center">`: `ـــــ ۞ ـــــ`, `❁ ❁ ❁`, `✿ ✿ ✿`, `◆ ◇ ◆` (not `۝`: it is made to hold a verse number and draws as an empty circle). More, tested on the website (S15): old `۞ ۩ ٭ ❦ ❧ ⁂ ※ ⸙`; common today `❀ ✿ ❁ ✾ ❖ ◈ ✦ ✧`; the pairs `༺ ༻` and `⊱ ⊰` are mirrored for you, so type them in reading order. ⚠ `ღ ꕥ ꧁ ꧂ ࿐` are letters of other scripts (Georgian, Vai, Javanese, Tibetan): a line that starts with one turns left to right, so start it with `&rlm;`, and type `꧂` before `꧁` (they are not mirrored). Not tried in the phone app |
 | Chapter headings | ✔ ⚠ | المقدمة, الباب الأول, فصل, الخاتمة. A symbol at the start of a heading is dropped from its link and leaves a hyphen: `#-الفاتحة` |
 | Benefit / caution notes | ✔ | Native alerts with the Arabic name in bold inside `<p dir="rtl">`. The English alert title stays |
@@ -24,10 +24,10 @@ Marks: ✔ works · ⚠ works with a flaw · ✘ doesn't work
 | Heritage fonts | ⚠ text, ✔ picture | Text uses the reader's font. `code/typing_svg.py` builds the Google font into the picture and writes from the right: Amiri, Scheherazade New (Naskh), Reem Kufi, Kufam (Kufic), Aref Ruqaa (Ruqʿa), Noto Nastaliq Urdu (Nastaʿlīq), Rakkas. readme-typing-svg types Arabic from the left |
 | Geometric band | ✔ picture | `docs/assets/heritage-band.svg`: eight-pointed stars, transparent background, no outside service |
 | Manuscript ornaments | ✔ picture | `code/ornaments.py`: shamsa (sun rosette), title cartouche (ʿunwān), interlace border, arabesque vine divider, arcade of pointed arches; transparent, gold and lapis blue (test S14) |
-| Justified lines | ✔ | `<div dir="rtl" align="justify">`, like Word's Justify: both edges straight. The browser widens spaces, it doesn't stretch letters. The whole Arabic page uses it. Phone app not verified |
+| Justified lines | ✔ ⚠ | `<div dir="rtl" align="justify">`, like Word's Justify: both edges straight. ⚠ The browser widens spaces, it doesn't stretch letters. The whole Arabic page uses it (T36). Phone app not verified |
 | Closing (خاتمة) | ✔ | The closing praise («وآخر دعوانا…») as a centered `<h4 dir="rtl">`, then the completion line and the Hijri date |
 
-Don't stretch words with tatweel (بســـم): GitHub search no longer finds them by their plain spelling (vowel marks
+Don't stretch words with tatweel (بســـم): GitHub search does not find them by their plain spelling (vowel marks
 do the same, test T40). Tatweel on its own, in a divider, is
 fine.
 
@@ -39,7 +39,21 @@ Opening:
 <div align="center">
 
 <h3 dir="rtl">بسم الله الرحمن الرحيم</h3>
-<h3 dir="rtl">والصلاة والسلام على نبينا محمد</h3>
+<h3 dir="rtl">والصلاة والسلام على رسول الله</h3>
+
+</div>
+```
+
+Or as one Kufic picture:
+
+```sh
+python code/typing_svg.py --still --line "بسم الله الرحمن الرحيم" --line "والصلاة والسلام على رسول الله" --font "Reem Kufi" --size 40 --color "#C9A24D" --width 560 --height 66 --out docs/assets/opening.svg
+```
+
+```html
+<div align="center">
+
+<img src="docs/assets/opening.svg" width="560" alt="بسم الله الرحمن الرحيم، والصلاة والسلام على رسول الله">
 
 </div>
 ```

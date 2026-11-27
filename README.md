@@ -32,7 +32,7 @@ GitHub هو الموقع الذي تُعرض عليه هذه الصفحة.
 
 <!-- check-arabic: on -->
 
-✔ مع &lrm;`&rlm;`&lrm; في أوله:
+✔ مع &lrm;`&rlm;`&lrm; في أوله، وهو داخل وسم الاتجاه فيعرضه تطبيق الهاتف صحيحًا أيضًا:
 
 &rlm;GitHub هو الموقع الذي تُعرض عليه هذه الصفحة.
 
@@ -60,9 +60,9 @@ GitHub هو الموقع الذي تُعرض عليه هذه الصفحة.
 | الفحص | يجد المشكلات في ملفاتك |
 | العلامات | يضعها في العناوين |
 
-**٣. عنوان بلغتين** في قائمة الالتزامات أو البلاغات ([T46](tests/lab.md#t46))، وهذه الكتلة تعرضه كما تعرضه تلك القوائم:
+**٣. عنوان بلغتين** في قائمة الالتزامات أو البلاغات ([T37](tests/lab.md#t37)، [T46](tests/lab.md#t46))، وهذه الكتلة تعرضه كما تعرضه تلك القوائم:
 
-✘ بلا علامات، فيقع العربي على اليسار ويُقرأ آخرًا:
+⚠ بلا علامات، فالترتيب صحيح لكن العربي يقع على اليسار ويُقرأ آخرًا:
 
 </div>
 
@@ -97,7 +97,7 @@ GitHub هو الموقع الذي تُعرض عليه هذه الصفحة.
 
 ### الأدوات
 
-- أداة فحص ملفات ماركداون، تُخرج لكل مشكلة سطرها وسببها:
+- أداة فحص ملفات ماركداون، تُخرج لكل مشكلة سطرها وسببها. وما بين &lrm;`<!-- check-arabic: off -->`&lrm; و&lrm;`<!-- check-arabic: on -->`&lrm; لا تُبلّغ عنه، للأمثلة الخاطئة عمدًا:
 
 </div>
 
@@ -120,7 +120,7 @@ gh api -X PATCH repos/OWNER/REPO -F description=@about.txt
 
 - أداة تفحص الصفحة بعد رفعها كما يعرضها الموقع وكما يعرضها تطبيق الهاتف: [`code/page_audit.js`](code/page_audit.js)، تُلصق في وحدة التحكم في المتصفح، ثم يُشغَّل &lrm;`auditArabic("web")`&lrm; ثم &lrm;`auditArabic("phone")`&lrm;.
 - أداة ترسم نصًا عربيًا بخطوط ويندوز صورًا تُقرأ في الوضعين الداكن والفاتح (تختار أنت النص والخطوط واللون): [`code/make-font-samples.ps1`](code/make-font-samples.ps1).
-- أدوات تصنع صورًا من اليمين إلى اليسار في مستودعك: نصًّا يُكتب أمامك بخط عربي ([`code/typing_svg.py`](code/typing_svg.py))، وشارة وبطاقة إحصاءات وبطاقة اقتباس ([`code/arabic_cards.py`](code/arabic_cards.py))، وزخارف المخطوطات ([`code/ornaments.py`](code/ornaments.py)).
+- أدوات تصنع صورًا من اليمين إلى اليسار في مستودعك: نصًّا يُكتب أمامك بخط عربي، أو ثابتًا بالخيار &lrm;`--still`&lrm; ([`code/typing_svg.py`](code/typing_svg.py))، وشارة وبطاقة إحصاءات وبطاقة اقتباس ([`code/arabic_cards.py`](code/arabic_cards.py))، وزخارف المخطوطات ([`code/ornaments.py`](code/ornaments.py)).
 - قالب جاهز لملف تمهيدي بالعربية والإنجليزية: [`templates/README.ar-en.md`](templates/README.ar-en.md).
 - اختبارات الأدوات: &lrm;`python code/test_tools.py`&lrm;.
 
@@ -190,9 +190,9 @@ GitHub هو الموقع الذي تُعرض عليه هذه الصفحة.
 
 </div>
 
-**3. A bilingual title** in a commit or issue list ([T46](tests/lab.md#t46)); this block shows it the way those lists do.
+**3. A bilingual title** in a commit or issue list ([T37](tests/lab.md#t37), [T46](tests/lab.md#t46)); this block shows it the way those lists do.
 
-✘ No marks: the Arabic lands on the left, read last.
+⚠ No marks: the order is right, but the Arabic lands on the left, read last.
 
 ```
 إضافة دليل التثبيت · Add the install guide
@@ -223,13 +223,14 @@ chapters, notes, abjad numbering, verse, margin notes, fonts): [heritage style](
 ### Tools
 
 - `python code/check_arabic_md.py README.md docs`: checks Markdown files and prints each problem with its line.
+  Lines between `<!-- check-arabic: off -->` and `<!-- check-arabic: on -->` are not reported (for deliberate mistakes).
 - `python code/arabic_text.py about --ar "..." --en "..." --out about.txt`: builds the About text (and, with
   `title`, issue / PR / release titles, and with `commit`, commit messages) with the right invisible marks.
 - [`code/make-font-samples.ps1`](code/make-font-samples.ps1): draws Arabic text in Windows fonts as pictures that
   read on dark and light pages (text, fonts and colours are parameters).
 - [`code/page_audit.js`](code/page_audit.js): paste into the browser console on a github.com page, run
   `auditArabic("web")` and `auditArabic("phone")`; lists what reads wrong on the website and in the phone app.
-- Right-to-left pictures made in your repo: typing text in an Arabic font
+- Right-to-left pictures made in your repo: typing text in an Arabic font, or still text with `--still`
   ([`code/typing_svg.py`](code/typing_svg.py)), badge, stats card and quote card
   ([`code/arabic_cards.py`](code/arabic_cards.py)), manuscript ornaments ([`code/ornaments.py`](code/ornaments.py)).
 - A ready README template in Arabic and English: [`templates/README.ar-en.md`](templates/README.ar-en.md).

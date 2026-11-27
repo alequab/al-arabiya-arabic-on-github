@@ -21,10 +21,10 @@
 
 ## Tools
 
-- [code/check_arabic_md.py](code/check_arabic_md.py): checks Markdown files for the problems in the guide.
+- [code/check_arabic_md.py](code/check_arabic_md.py): checks Markdown files for the problems in the guide (`<!-- check-arabic: off -->` … `on` around deliberate mistakes).
 - [code/page_audit.js](code/page_audit.js): browser-console audit of a github.com page, website and phone-app modes.
 - [code/arabic_text.py](code/arabic_text.py): builds the About text, titles and commit messages with the right invisible marks.
-- [code/typing_svg.py](code/typing_svg.py): typing-text picture that writes Arabic from the right, Google font built in.
+- [code/typing_svg.py](code/typing_svg.py): typing-text picture that writes Arabic from the right, Google font built in (`--still`: lines shown at once, no animation).
 - [code/arabic_cards.py](code/arabic_cards.py): right-to-left badge, GitHub stats card and quote card pictures.
 - [code/ornaments.py](code/ornaments.py): manuscript ornament pictures (shamsa, cartouche, interlace, arabesque, arcade).
 - [code/test_tools.py](code/test_tools.py): tests for all the tools.

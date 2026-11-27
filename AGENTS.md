@@ -55,11 +55,14 @@ from `code/page_audit.js`, which copies the app. Evidence: `tests/lab.md` (tests
     - **12a.** GitHub alerts: write the Arabic text as `> <p dir="rtl">...</p>` (the alert itself must stay outside the div);
       without it the phone app shows it left to right.
     - **12b.** Never `align="right"` for Arabic (the phone app scrambles it): use `dir="rtl"` on a div, `<p>` or heading. A
-      centered line that mixes Arabic and English needs `dir="rtl"` on its element (`<h4 dir="rtl">`).
+      centered line that mixes Arabic and English needs `dir="rtl"` on its element (`<h4 dir="rtl">`). In a bilingual
+      `Arabic · English` line whose Arabic part ends with a Latin word, put `&rlm;` after the Arabic part
+      (`العربية على GitHub&rlm; · Arabic on GitHub`), or the word joins the English.
     - **12c.** Justified Arabic paragraphs (both edges straight, like Word's Justify): `<div dir="rtl" align="justify">`
       (test T36). The browser widens spaces (no kashida); best for long paragraphs. Phone app not verified.
 13. A chosen Arabic font or an Arabic alert title is only possible as a picture (rule 12), text in `alt`.
-    `code/typing_svg.py --font <Google font>` makes such a picture, written from the right (rule 13a).
+    `code/typing_svg.py --font <Google font>` makes such a picture, written from the right (rule 13a); `--still` draws
+    the lines at once with no animation (for a fixed heading such as the opening).
 
 ## Picture services (banners, badges, cards)
 
@@ -104,7 +107,8 @@ the Latin word lands on the wrong side (test S13). Details: `docs/en/styles.md`.
 
 ## Before you finish
 
-20. Run `python code/check_arabic_md.py <files or folders>` and fix every ERROR and WARN.
+20. Run `python code/check_arabic_md.py <files or folders>` and fix every ERROR and WARN. A deliberate mistake (a "before"
+    example) goes between `<!-- check-arabic: off -->` and `<!-- check-arabic: on -->`; nothing there is reported.
     - **20a.** If you can drive a browser: open the page on github.com, paste `code/page_audit.js` into the console, run
       `auditArabic("web")` and `auditArabic("phone")`, and fix every finding.
 21. Render with `gh api -X POST markdown -f mode=gfm -F text=@FILE` (or the web page) and check that alerts rendered.
