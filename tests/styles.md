@@ -233,22 +233,31 @@ title cartouche, interlace border, arabesque vine divider, arcade of pointed arc
 
 ### S15
 
-Ornament characters typed as text, inside the RTL div. A: old (manuscripts and old print). B: common today. C: pairs
-that face each other, typed in reading order (opening one first).
+Ornament characters typed as text, inside the RTL div. A: old (manuscripts and old print; ornate brackets typed
+U+FD3F first). B: common today. B2: the same after `&rlm;`. C: pairs that face each other, typed in reading order
+(opening one first). C2: `&rlm;` first and the Javanese pair typed the other way round.
 
 <div dir="rtl">
 
 A ↓
 
-<p>۞ · ۩ · ٭ · ❦ · ❧ · ⁂ · ※ · ⸙ · ﴾ ﴿</p>
+<p>۞ · ۩ · ٭ · ❦ · ❧ · ⁂ · ※ · ⸙ · ﴿ ﴾</p>
 
 B ↓
 
 <p>❀ · ✿ · ❁ · ✾ · ❖ · ◈ · ✦ · ✧ · ღ · ꕥ · ࿐</p>
 
+B2 ↓ the same, starting with &amp;rlm;
+
+<p>&rlm;❀ · ✿ · ❁ · ✾ · ❖ · ◈ · ✦ · ✧ · ღ · ꕥ · ࿐</p>
+
 C ↓
 
 <p>꧁ العربية ꧂</p>
+
+C2 ↓ starting with &amp;rlm;, and ꧂ typed first
+
+<p>&rlm;꧂ العربية ꧁</p>
 
 <p>༺ العربية ༻</p>
 
