@@ -8,17 +8,81 @@
 
 <div dir="rtl">
 
-[الخلاصة](#الخلاصة) · [الدليل الكامل](docs/ar/guide.md) · [الأنماط](docs/ar/styles.md) · [الطراز التراثي](docs/ar/heritage.md) · [الأدوات](#الأدوات) · [للذكاء الاصطناعي](#للذكاء-الاصطناعي) · [صفحة الاختبارات](tests/lab.md) · [المساهمة](CONTRIBUTING.md) · [الترخيص](#الترخيص)
+[قبل وبعد](#قبل-القاعدة-وبعدها) · [الخلاصة](#الخلاصة) · [الدليل الكامل](docs/ar/guide.md) · [الأنماط](docs/ar/styles.md) · [الطراز التراثي](docs/ar/heritage.md) · [الأدوات](#الأدوات) · [للذكاء الاصطناعي](#للذكاء-الاصطناعي) · [صفحة الاختبارات](tests/lab.md) · [المساهمة](CONTRIBUTING.md) · [الترخيص](#الترخيص)
 
 </div>
 
-[Summary](#summary) · [Full guide](docs/en/guide.md) · [Styles](docs/en/styles.md) · [Heritage style](docs/en/heritage.md) · [Tools](#tools) · [For AI tools](#for-ai-tools) · [Test page](tests/lab.md) · [Contributing](CONTRIBUTING.md) · [License](#license)
+[Before and after](#before-and-after) · [Summary](#summary) · [Full guide](docs/en/guide.md) · [Styles](docs/en/styles.md) · [Heritage style](docs/en/heritage.md) · [Tools](#tools) · [For AI tools](#for-ai-tools) · [Test page](tests/lab.md) · [Contributing](CONTRIBUTING.md) · [License](#license)
 
 </div>
 
 <div dir="rtl">
 
 دليل مجرَّب لكتابة العربية على GitHub: الملفات التمهيدية والتوثيق والبلاغات وطلبات الدمج وملاحظات الإصدار ووصف المستودع والعناوين والأسماء. كل قاعدة فيه جُرّبت على الموقع، ولأكثرها اختبار حي في [صفحة الاختبارات](tests/lab.md). ونتائج تطبيق الهاتف (أندرويد) من لقطات حقيقية حيث ذُكر ذلك، وإلا فمن أداة تحاكيه.
+
+### قبل القاعدة وبعدها
+
+أمثلة حية: انظر كيف يعرضها GitHub على هذه الصفحة الآن.
+
+**١. سطر يبدأ بكلمة لاتينية** ([T2](tests/lab.md#t2))
+
+✘ بلا علامة، فيقف السطر على اليسار وتنتقل نقطته:
+
+<!-- check-arabic: off -->
+
+GitHub هو الموقع الذي تُعرض عليه هذه الصفحة.
+
+<!-- check-arabic: on -->
+
+✔ مع &lrm;`&rlm;`&lrm; في أوله:
+
+&rlm;GitHub هو الموقع الذي تُعرض عليه هذه الصفحة.
+
+**٢. جدول عربي** ([T6](tests/lab.md#t6))
+
+✘ خارج وسم الاتجاه، فتبدأ أعمدته من اليسار:
+
+</div>
+
+<!-- check-arabic: off -->
+
+| الأداة | عملها |
+|---|---|
+| الفحص | يجد المشكلات في ملفاتك |
+| العلامات | يضعها في العناوين |
+
+<!-- check-arabic: on -->
+
+<div dir="rtl">
+
+✔ داخل &lrm;`<div dir="rtl">`&lrm;:
+
+| الأداة | عملها |
+|---|---|
+| الفحص | يجد المشكلات في ملفاتك |
+| العلامات | يضعها في العناوين |
+
+**٣. عنوان بلغتين** في قائمة الالتزامات أو البلاغات ([T46](tests/lab.md#t46))، وهذه الكتلة تعرضه كما تعرضه تلك القوائم:
+
+✘ بلا علامات، فيقع العربي على اليسار ويُقرأ آخرًا:
+
+</div>
+
+```
+إضافة دليل التثبيت · Add the install guide
+```
+
+<div dir="rtl">
+
+✔ العنوان كله بين علامتي RLI وPDI، فيقع العربي على اليمين ويُقرأ أولًا (الأداة &lrm;`code/arabic_text.py`&lrm; تضعهما):
+
+</div>
+
+```
+⁧إضافة دليل التثبيت‏ · Add the install guide‎⁩
+```
+
+<div dir="rtl">
 
 ### الخلاصة
 
@@ -81,6 +145,66 @@ gh api -X PATCH repos/OWNER/REPO -F description=@about.txt
 A tested guide to writing Arabic (right-to-left) text on GitHub: README and docs, issues, pull requests, release
 notes, the repo About text, titles and names. Every rule was checked on github.com, and most have a live test on the [test page](tests/lab.md). Phone-app
 (Android) results come from real screenshots where marked, otherwise from a tool that copies the app.
+
+### Before and after
+
+Live examples: see how GitHub shows them on this page right now.
+
+**1. An Arabic line that starts with a Latin word** ([T2](tests/lab.md#t2))
+
+✘ No mark: the line sits on the left and its full stop moves.
+
+<!-- check-arabic: off -->
+
+GitHub هو الموقع الذي تُعرض عليه هذه الصفحة.
+
+<!-- check-arabic: on -->
+
+✔ With `&rlm;` at the start (inside the RTL div, so the phone app shows it right too):
+
+<div dir="rtl">
+
+&rlm;GitHub هو الموقع الذي تُعرض عليه هذه الصفحة.
+
+</div>
+
+**2. An Arabic table** ([T6](tests/lab.md#t6))
+
+✘ Outside the RTL div: the columns start from the left.
+
+<!-- check-arabic: off -->
+
+| الأداة | عملها |
+|---|---|
+| الفحص | يجد المشكلات في ملفاتك |
+| العلامات | يضعها في العناوين |
+
+<!-- check-arabic: on -->
+
+✔ Inside `<div dir="rtl">`:
+
+<div dir="rtl">
+
+| الأداة | عملها |
+|---|---|
+| الفحص | يجد المشكلات في ملفاتك |
+| العلامات | يضعها في العناوين |
+
+</div>
+
+**3. A bilingual title** in a commit or issue list ([T46](tests/lab.md#t46)); this block shows it the way those lists do.
+
+✘ No marks: the Arabic lands on the left, read last.
+
+```
+إضافة دليل التثبيت · Add the install guide
+```
+
+✔ The whole title in RLI…PDI: the Arabic on the right, read first (`code/arabic_text.py` adds the marks).
+
+```
+⁧إضافة دليل التثبيت‏ · Add the install guide‎⁩
+```
 
 ### Summary
 

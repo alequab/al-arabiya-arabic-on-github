@@ -11,6 +11,8 @@ Prints one line per finding:  path:line: LEVEL rule-id: message
 Exit code 1 when there is any ERROR or WARN, else 0.
 
 The checks are line-based and simple; they do not parse Markdown fully. Fenced code blocks and inline code are skipped.
+Lines between <!-- check-arabic: off --> and <!-- check-arabic: on --> are read (divs and code blocks still count)
+but not reported: for examples that are wrong on purpose, such as a "before" next to an "after".
 """
 import argparse
 import html
@@ -58,6 +60,7 @@ DIGIT_GROUPS = re.compile(r"(?<![\d.,:/-])" + _NUM + r"(?:(?:\s+[-–—]\s+|\s*
 SHORTCODE = re.compile(r":[a-z0-9_+-]+:")                  # :rocket: is drawn as an emoji
 ISOLATED = re.compile("(?:[\\u2066-\\u2068]|&#x206[678];).*?(?:\\u2069|&#x2069;)", re.I)
 THEMATIC_BREAK = re.compile(r"^\s*([-*_])(\s*\1){2,}\s*$")
+MUTE = re.compile(r"<!--\s*check-arabic:\s*(off|on)\s*-->", re.I)
 LEADING_MARKUP = re.compile(r"^\s*(?:#{1,6}\s+|>\s*|[-*+]\s+(?:\[[ xX]\]\s+)?|\d+[.)]\s+|\|\s*)")
 
 
@@ -101,8 +104,14 @@ def check_text(path: str, lines: list[str]):
     fence_col = 0      # where that fence starts on its line
     alert = False      # inside a GitHub alert
     in_comment = False
+    muted, mute = set(), False      # lines between check-arabic: off and on
     for n, raw in enumerate(lines, 1):
         line = raw.rstrip("\n")
+        m = MUTE.search(line)
+        if m:
+            mute = m.group(1).lower() == "off"
+        if mute:
+            muted.add(n)
         direction = next((d for _, d in reversed(divs) if d in ("rtl", "ltr")), "")
         in_rtl = direction == "rtl"
         in_center = any(d == "center" for _, d in divs)
@@ -309,7 +318,7 @@ def check_text(path: str, lines: list[str]):
                 fix = "&rlm;" if kind == "latin" else "&rlm; (with a space after it)"
                 add(n, "WARN", "starts-ltr",
                     f"Arabic line starts with {what}, so it reads left to right: start it with {fix}")
-    return findings
+    return [f for f in findings if f[1] not in muted]
 
 
 def files_from(args):

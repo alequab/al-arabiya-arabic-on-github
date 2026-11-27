@@ -274,6 +274,19 @@ class TextTool(unittest.TestCase):
         self.assertEqual(t, "\u2067README: الجدول\u2069")
 
 
+class Muted(unittest.TestCase):
+    def test_off_on(self):
+        md = "\n".join(["GitHub هو الموقع.", "<!-- check-arabic: off -->", "GitHub هو الموقع.",
+                         "<!-- check-arabic: on -->", "GitHub هو الموقع."])
+        self.assertEqual([n for n, r in rules(md) if r == "starts-ltr"], [1, 5])
+
+    def test_structure_still_read(self):
+        # a div opened inside the muted part still counts after it
+        md = "\n".join(["<!-- check-arabic: off -->", '<div dir="rtl">', "", "<!-- check-arabic: on -->",
+                         "سطر عربي.", "", "</div>"])
+        self.assertEqual(rules(md, outside=True), [])
+
+
 class Pictures(unittest.TestCase):
     def num(self, svg, pattern):
         return [float(x) for x in re.findall(pattern, svg)]
