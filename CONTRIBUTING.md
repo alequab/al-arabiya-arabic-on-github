@@ -8,6 +8,7 @@
 - **عندك طريقة أفضل؟** اكتب الحالة اختبارًا جديدًا في آخر &lrm;`tests/lab.md`&lrm; برقم جديد (مثل T47)، فيه الطريقة المعتادة والحل، ثم اربط القاعدة به في الدليلين.
 - **غيّرت قاعدة؟** غيّرها في الدليل العربي والإنجليزي معًا، وفي &lrm;`AGENTS.md`&lrm;، حتى لا تختلف النسخ.
 - **قبل الإرسال:** شغّل الفحص والاختبارات، ثم افتح صفحتك على GitHub وشغّل &lrm;`page_audit.js`&lrm; كما في القسم 10 من الدليل.
+- **مثال خاطئ عمدًا؟** ضعه بين &lrm;`<!-- check-arabic: off -->`&lrm; و&lrm;`<!-- check-arabic: on -->`&lrm;، فلا تُبلّغ عنه أداة الفحص. أما &lrm;`page_audit.js`&lrm; فتُبلّغ عنه دائمًا، لأن GitHub يحذف التعليقات من الصفحة.
 
 </div>
 
@@ -38,6 +39,8 @@ come from real screenshots or from a tool that copies the app.
 - **Changed a rule?** Change it in the Arabic and English guides and in `AGENTS.md` together, so they never disagree.
 - **Before you send:** run the checker and the tests, then open your page on GitHub and run `page_audit.js` as in
   section 10 of the guide.
+- **A deliberate mistake?** Put it between `<!-- check-arabic: off -->` and `<!-- check-arabic: on -->` and the checker
+  won't report it. `page_audit.js` still will, because GitHub removes comments from the page.
 
 ```powershell
 python code/check_arabic_md.py README.md docs
