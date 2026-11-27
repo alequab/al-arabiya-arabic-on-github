@@ -331,7 +331,7 @@ class Pictures(unittest.TestCase):
         s = arabic_cards.stats({"stars": 84000, "commits": 38}, "إحصاءات")
         self.assertIn(">84k<", s)
         self.assertIn("مجموع النجوم", s)
-        self.assertNotIn("البلاغات", s)                                     # only the numbers given
+        self.assertNotIn("المشكلات", s)                                     # only the numbers given
         self.assertEqual(arabic_cards.fmt_num(1234), "1.2k")
         self.assertEqual(arabic_cards.fmt_num(999), "999")
 

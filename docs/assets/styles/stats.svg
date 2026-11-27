@@ -11,10 +11,10 @@
 <text x='405' y='105' direction='rtl' font-size='14' fill='#434d58'>الإيداعات (العام الماضي)</text>
 <text x='25' y='105' font-size='14' font-weight='700' fill='#434d58'>199</text>
 <circle cx='420' cy='130' r='4' fill='#2f80ed'/>
-<text x='405' y='135' direction='rtl' font-size='14' fill='#434d58'>طلبات الدمج</text>
+<text x='405' y='135' direction='rtl' font-size='14' fill='#434d58'>طلبات السحب</text>
 <text x='25' y='135' font-size='14' font-weight='700' fill='#434d58'>21</text>
 <circle cx='420' cy='160' r='4' fill='#2f80ed'/>
-<text x='405' y='165' direction='rtl' font-size='14' fill='#434d58'>البلاغات</text>
+<text x='405' y='165' direction='rtl' font-size='14' fill='#434d58'>المشكلات</text>
 <text x='25' y='165' font-size='14' font-weight='700' fill='#434d58'>34</text>
 <circle cx='420' cy='190' r='4' fill='#2f80ed'/>
 <text x='405' y='195' direction='rtl' font-size='14' fill='#434d58'>ساهم في (العام الماضي)</text>

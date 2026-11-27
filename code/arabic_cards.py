@@ -91,8 +91,8 @@ def quote(text, author, width=500, font=None, face="", size=20, color="#333", ac
     return "\n".join(out) + "\n"
 
 
-STATS_LABELS = [("stars", "مجموع النجوم"), ("commits", "الإيداعات (العام الماضي)"), ("prs", "طلبات الدمج"),
-                ("issues", "البلاغات"), ("contributed", "ساهم في (العام الماضي)")]
+STATS_LABELS = [("stars", "مجموع النجوم"), ("commits", "الإيداعات (العام الماضي)"), ("prs", "طلبات السحب"),
+                ("issues", "المشكلات"), ("contributed", "ساهم في (العام الماضي)")]
 
 
 def fmt_num(n):
