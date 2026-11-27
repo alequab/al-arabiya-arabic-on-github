@@ -9,7 +9,7 @@ body:
     id: term
     attributes:
       label: "المصطلح الإنجليزي · English term"
-      description: "مثل commit · For example commit"
+      description: "مثل commit‏ · For example commit"
     validations:
       required: true
   - type: input
@@ -22,6 +22,6 @@ body:
     id: why
     attributes:
       label: "لماذا؟ وما مصدرها؟ · Why, and what is the source?"
-      description: "معجم، أو واجهة برنامج مترجمة، أو كتاب، مع رابط إن أمكن · A dictionary, a translated program, or a book, with a link if you can"
+      description: "معجم، أو برنامج مترجم، أو كتاب، مع رابط إن أمكن · A dictionary, a translated program, or a book, with a link if you can"
     validations:
       required: true

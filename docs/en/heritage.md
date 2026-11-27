@@ -6,7 +6,8 @@ A README style taken from the classical Arabic book: opening and closing formula
 (فصول), "benefit" and "caution" notes, abjad numbering, margin notes and verse laid out in two halves. Everything is
 text except the parts that are pictures (the heritage fonts, the geometric band and the manuscript ornaments),
 which you can leave out.
-**See it live on the [Arabic page](../ar/heritage.md)**; this page explains the same parts with copy-paste code. Tested on the website and
+**See it live on the [Arabic page](../ar/heritage.md)**; this page explains the same parts with copy-paste code. Code
+blocks show left to right, so Arabic with tags may look scrambled in them, but it copies correctly. Tested on the website and
 with `page_audit.js` in phone mode (November 2026).
 
 Marks: ✔ works · ⚠ works with a flaw · ✘ doesn't work
@@ -14,14 +15,14 @@ Marks: ✔ works · ⚠ works with a flaw · ✘ doesn't work
 | Part | Verdict | How |
 |---|---|---|
 | Opening (فاتحة) | ✔ | Bismillah and the blessing on the Prophet as centered `<h3 dir="rtl">` lines, then «أما بعد». In a chosen font (Kufic, as in this repo's README): one `<img>` made by `code/typing_svg.py --still`, the text in alt |
-| Dividers | ✔ | A line of ornaments in `<div align="center">`: `ـــــ ۞ ـــــ`, `❁ ❁ ❁`, `✿ ✿ ✿`, `◆ ◇ ◆` (not `۝`: it is made to hold a verse number and draws as an empty circle). More, tested on the website (S15): old `۞ ۩ ٭ ❦ ❧ ⁂ ※ ⸙`; common today `❀ ✿ ❁ ✾ ❖ ◈ ✦ ✧`; the pairs `༺ ༻` and `⊱ ⊰` are mirrored for you, so type them in reading order. ⚠ `ღ ꕥ ꧁ ꧂ ࿐` are letters of other scripts (Georgian, Vai, Javanese, Tibetan): a line that starts with one turns left to right, so start it with `&rlm;`, and type `꧂` before `꧁` (they are not mirrored). Not tried in the phone app |
+| Dividers | ✔ | A line of ornaments in `<div align="center">`: `ـــــ ۞ ـــــ`, `❁ ❁ ❁`, `✿ ✿ ✿`, `◆ ◇ ◆` (not `۝`: it is made to hold a verse number and draws as an empty circle). More, tested on the website (S15; not tried in the phone app, whose font may lack some): old `۞ ۩ ٭ ❦ ❧ ⁂ ※ ⸙` and the ornate brackets `﴿ ﴾` (type U+FD3F first); common today `❀ ✿ ❁ ✾ ❖ ◈ ✦ ✧`; the pairs `༺ ༻` and `⊱ ⊰` are mirrored for you, so type them in reading order. ⚠ `ღ ꕥ ꧁ ꧂ ࿐` are letters of other scripts (Georgian, Vai, Javanese, Tibetan): a line that starts with one turns left to right, so start it with `&rlm;`, and type `꧂` before `꧁` (they are not mirrored). Not tried in the phone app |
 | Chapter headings | ✔ ⚠ | المقدمة, الباب الأول, فصل, الخاتمة. A symbol at the start of a heading is dropped from its link and leaves a hyphen: `#-الفاتحة` |
 | Benefit / caution notes | ✔ | Native alerts with the Arabic name in bold inside `<p dir="rtl">`. The English alert title stays |
-| Abjad numbering | ✔ | Markdown lists always number 1. 2. 3. Write أ. ب. ج. by hand, one line each, joined with `<br>` |
+| Abjad numbering | ✔ | Markdown lists always number 1. 2. 3. Write أ. ب. ج. by hand, one line each, joined with `<br>`. Abjad order: أ ب ج د هـ و ز ح ط ي, then ك (20) ل (30) م (40) ن (50) |
 | Quran verses | ✔ ⚠ | Ornate brackets around the verse, as in «﴿ وَقُل رَّبِّ زِدْنِي عِلْمًا ﴾» (their look depends on the reader's font; Windows draws them close to plain brackets): type U+FD3F first, then the verse, then U+FD3E. Check the text against a mushaf |
 | Verse (poetry) | ✔ ⚠ | Both halves on one centered `<p dir="rtl">` line with `&emsp;` between; on narrow screens the second half wraps under the first |
 | Margin notes | ✔ | Not `[^1]` (that adds an English "Footnotes" section on the left): `<sup>(١)</sup>` after the word and a «الحواشي» section at the end |
-| Heritage fonts | ⚠ text, ✔ picture | Text uses the reader's font. `code/typing_svg.py` builds the Google font into the picture and writes from the right: Amiri, Scheherazade New (Naskh), Reem Kufi, Kufam (Kufic), Aref Ruqaa (Ruqʿa), Noto Nastaliq Urdu (Nastaʿlīq), Rakkas. readme-typing-svg types Arabic from the left |
+| Heritage fonts | ⚠ text, ✔ picture | Text uses the reader's font. `code/typing_svg.py` builds the Google font into the picture and writes from the right: Amiri, Scheherazade New (Naskh), Reem Kufi, Kufam (Kufic), Aref Ruqaa (Ruqʿa), Noto Nastaliq Urdu (Nastaʿlīq), Rakkas (for headings). readme-typing-svg types Arabic from the left |
 | Geometric band | ✔ picture | `docs/assets/heritage-band.svg`: eight-pointed stars, transparent background, no outside service |
 | Manuscript ornaments | ✔ picture | `code/ornaments.py`: shamsa (sun rosette), title cartouche (ʿunwān), interlace border, arabesque vine divider, arcade of pointed arches; transparent, gold and lapis blue (test S14) |
 | Justified lines | ✔ ⚠ | `<div dir="rtl" align="justify">`, like Word's Justify: both edges straight. ⚠ The browser widens spaces, it doesn't stretch letters. The whole Arabic page uses it (T36). Phone app not verified |

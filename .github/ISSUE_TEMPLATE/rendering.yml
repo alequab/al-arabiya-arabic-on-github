@@ -19,8 +19,8 @@ body:
       label: "أين رأيته؟ · Where did you see it?"
       options:
         - "الموقع · Website"
-        - "تطبيق الهاتف (أندرويد) · Phone app (Android)"
-        - "تطبيق الهاتف (iOS) · Phone app (iOS)"
+        - "تطبيق الهاتف (Android)‏ · Phone app (Android)"
+        - "تطبيق الهاتف (iOS)‏ · Phone app (iOS)"
         - "غير ذلك · Other"
     validations:
       required: true
@@ -28,6 +28,6 @@ body:
     id: what
     attributes:
       label: "ما الذي يظهر خطأً؟ · What shows wrong?"
-      description: "النص كما كتبته، وما ظهر، وصورة إن أمكن · The text as written, what showed, and a screenshot if you can"
+      description: "النص كما كتبته، وما ظهر، ولقطة شاشة إن أمكن · The text as written, what showed, and a screenshot if you can"
     validations:
       required: true

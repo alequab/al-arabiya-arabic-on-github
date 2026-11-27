@@ -93,7 +93,7 @@ These don't change how GitHub draws the page; they make the Arabic read well (ad
 - Modern Standard Arabic for docs and interface text.
 - Headings, links and buttons as verbal nouns, which address no one by gender: «التثبيت», not «ثبّت».
 - One digit system per page: Western (`2026`) or Arabic-Indic (`٢٠٢٦`), not both. The heritage style keeps
-  Arabic-Indic for verse numbers, margin notes and the Hijri date only.
+  Arabic-Indic for verse numbers, footnote marks and the Hijri date only.
 - Names of products and tools stay in Latin letters (GitHub, React, npm); translate common words (ملف, مجلد, تثبيت).
   Each English term has one Arabic word: see the [glossary](../glossary.md#glossary).
 

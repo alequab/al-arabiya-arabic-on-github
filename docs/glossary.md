@@ -4,22 +4,22 @@
 
 &rlm;[English](#glossary) · [الدليل](ar/guide.md) · [المساهمة](../CONTRIBUTING.md)
 
-لكل مصطلح إنجليزي في هذا الدليل كلمة عربية واحدة. هذا الجدول يجمعها: الكلمة المقترحة، ومعناها، والكلمات الأخرى التي رأيناها، ومن أين أخذناها. فإن رأيت كلمة أصح أو مصدرًا أوثق، [فافتح بلاغًا «مصطلح»](https://github.com/alequab/al-arabiya-arabic-on-github/issues/new?template=term.yml) واذكر المصطلح والكلمة التي تقترحها ومصدرها.
+لكل مصطلح إنجليزي في هذا الدليل كلمة عربية واحدة. هذا الجدول يجمعها: المصطلح الإنجليزي، والكلمة المقترحة، ومعناها، والكلمات الأخرى التي رأيناها، ومصادرها، وحالها. فإن عرفت كلمة أصح أو مصدرًا أوثق، [فافتح بلاغًا «مصطلح»](https://github.com/alequab/al-arabiya-arabic-on-github/issues/new?template=term.yml) واذكر المصطلح والكلمة التي تقترحها ومصدرها.
 
 ### الحال
 
 - ✔ معتمد: مصدر واحد على الأقل يوافقه، وهو مستعمل في الدليل كله.
 - ○ مستعمل: لم نجد له مصدرًا بعد، ولا خلاف عليه.
-- ✎ مقترح تغييره: في الدليل كلمة أخرى ستُستبدل به.
+- ✎ اختير بدل كلمة أخرى: الكلمات الأخرى في صفه لا تُستعمل.
 - ؟ يحتاج إلى اختيار: فيه أكثر من كلمة، ورأيك هنا يفيد.
 
 ### المصادر
 
 - **و**: [ويكيبيديا العربية](https://ar.wikipedia.org)، عنوان المقالة المقابلة للمقالة الإنجليزية (2026-11-28).
-- **ف**: [واجهة Forgejo العربية](https://codeberg.org/forgejo/forgejo/src/branch/forgejo/options/locale/locale_ar.ini)، وهو موقع مثل GitHub مترجم إلى العربية.
+- **ف**: [واجهة Forgejo العربية](https://codeberg.org/forgejo/forgejo/src/branch/forgejo/options/locale/locale_ar.ini)، وهو برنامج منصة مثل GitHub، وواجهته مترجمة إلى العربية.
 - **د**: [صفحة Git في ويكي Debian العربية](https://wiki.debian.org/ar/git).
 - **ش**: كتب التراث في المكتبة الشاملة.
-- **م**: هذا المستودع، وعدد مرات الاستعمال فيه (×).
+- **م**: هذا المستودع، وعدد مرات الاستعمال فيه يوم كُتب المسرد (×).
 
 ## 1. مصطلحات GitHub وGit
 
@@ -126,7 +126,7 @@
 | arabesque | الرقش | غصن ملتف بأوراقه | الزخرفة العربية (و) | | ؟ |
 | arcade | القناطر | صف من العقود المدببة | | | ○ |
 
-لم نتحقق بعد من مصطلحات Microsoft العربية ولا من المعاجم الموحدة لمجامع اللغة العربية. فإن كان عندك أحدها، فاذكر ما فيه في بلاغ.
+لم نتحقق بعد من مصطلحات Microsoft العربية ولا من المعاجم الموحدة لمجامع اللغة العربية. فإن كان لديك أحدها، فاذكر ما فيه في بلاغ.
 
 </div>
 
@@ -141,12 +141,13 @@ Arabic word, its meaning (in Arabic), other words we have seen, the sources, and
 or a stronger source, [open a "Term" issue](https://github.com/alequab/al-arabiya-arabic-on-github/issues/new?template=term.yml)
 with the term, your word and where it comes from.
 
-Status: ✔ agreed (at least one source, used throughout) · ○ in use, no source found yet · ✎ will replace another word
-in the guide · ؟ needs a choice: your opinion helps here.
+Status: ✔ agreed (at least one source, used throughout) · ○ in use, no source found yet · ✎ chosen over another word: the
+other words in its row are not used · ؟ needs a choice: your opinion helps here.
 
 Sources: و Arabic Wikipedia (the title of the article linked to the English one, 2026-11-28) · ف the
 [Forgejo Arabic interface](https://codeberg.org/forgejo/forgejo/src/branch/forgejo/options/locale/locale_ar.ini) (a
 GitHub-like forge) · د the [Arabic Debian wiki page on Git](https://wiki.debian.org/ar/git) · ش classical books in the
-Shamela library · م this repo, with the number of uses (×).
+Shamela library · م this repo, with the number of uses when the glossary was written (×).
 
-Not checked yet: Microsoft's Arabic terminology and the unified dictionaries of the Arabic language academies.
+Not checked yet: Microsoft's Arabic terminology and the unified dictionaries of the Arabic language academies. If you
+have one of them, say what it gives in an issue.

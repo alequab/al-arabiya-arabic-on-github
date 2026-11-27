@@ -52,11 +52,17 @@ git clone https://github.com/OWNER/REPO
 
 One or two sentences about the project.
 
+- First item
+- Second item
+
 ## Installation
 
 ```powershell
 git clone https://github.com/OWNER/REPO
 ```
+
+> [!NOTE]
+> Write the alert text here.
 
 ## License
 

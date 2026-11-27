@@ -16,13 +16,13 @@
 
 <div dir="rtl">
 
-دليل مجرَّب لكتابة العربية على GitHub: الملفات التمهيدية والتوثيق والبلاغات وطلبات الدمج وملاحظات الإصدار ووصف المستودع والعناوين والأسماء. كل قاعدة فيه جُرّبت على الموقع، ولأكثرها اختبار حي في [صفحة الاختبارات](tests/lab.md). ونتائج تطبيق الهاتف (أندرويد) من لقطات حقيقية حيث ذُكر ذلك، وإلا فمن أداة تحاكيه.
+دليل مجرَّب لكتابة العربية (من اليمين إلى اليسار) على GitHub: الملفات التمهيدية والتوثيق والبلاغات وطلبات الدمج وملاحظات الإصدار ووصف المستودع والعناوين والأسماء. كل قاعدة فيه جُرّبت على الموقع، ولأكثرها اختبار حي في [صفحة الاختبارات](tests/lab.md). ونتائج تطبيق الهاتف (Android) من لقطات حقيقية حيث ذُكر ذلك، وإلا فمن أداة تحاكيه.
 
 ### قبل القاعدة وبعدها
 
 أمثلة حية: انظر كيف يعرضها GitHub على هذه الصفحة الآن.
 
-**١. سطر يبدأ بكلمة لاتينية** ([T2](tests/lab.md#t2))
+**1. سطر يبدأ بكلمة لاتينية** ([T2](tests/lab.md#t2))
 
 ✘ بلا علامة، فيقف السطر على اليسار وتنتقل نقطته:
 
@@ -36,7 +36,7 @@ GitHub هو الموقع الذي تُعرض عليه هذه الصفحة.
 
 &rlm;GitHub هو الموقع الذي تُعرض عليه هذه الصفحة.
 
-**٢. جدول عربي** ([T6](tests/lab.md#t6))
+**2. جدول عربي** ([T6](tests/lab.md#t6))
 
 ✘ خارج وسم الاتجاه، فتبدأ أعمدته من اليسار:
 
@@ -60,9 +60,9 @@ GitHub هو الموقع الذي تُعرض عليه هذه الصفحة.
 | الفحص | يجد المشكلات في ملفاتك |
 | العلامات | يضعها في العناوين |
 
-**٣. عنوان بلغتين** في قائمة الالتزامات أو البلاغات ([T37](tests/lab.md#t37)، [T46](tests/lab.md#t46))، وهذه الكتلة تعرضه كما تعرضه تلك القوائم:
+**3. عنوان بلغتين** في قائمة الالتزامات أو البلاغات ([T37](tests/lab.md#t37)، [T46](tests/lab.md#t46))، وهذه الكتلة تعرضه كما تعرضه تلك القوائم:
 
-⚠ بلا علامات، فالترتيب صحيح لكن العربي يقع على اليسار ويُقرأ آخرًا:
+⚠ بلا علامات، فالترتيب صحيح لكن الجزء العربي يقع على اليسار ويُقرأ آخرًا:
 
 </div>
 
@@ -88,12 +88,12 @@ GitHub هو الموقع الذي تُعرض عليه هذه الصفحة.
 2. إن بدأ السطر العربي بكلمة لاتينية فابدأه بالعلامة &lrm;`&rlm;`&lrm;.
 3. ضع القسم العربي داخل &lrm;`<div dir="rtl">`&lrm;، فتطبيق الهاتف والجداول وملاحظات الإصدار تحتاجه، واترك سطرًا فارغًا بعد فتحه وقبل إغلاقه.
 4. أغلق هذا العنصر قبل كتل الشيفرة وقبل تنبيهات GitHub، ثم افتحه بعدها.
-5. تجنّب في العربية: الاقتباس، والحواشي الأصلية، والمائل، وقوائم المهام.
+5. تجنّب في العربية: الاقتباس &lrm;`>`&lrm;، والحواشي الأصلية &lrm;`[^1]`&lrm;، والمائل، وقوائم المهام.
 6. وصف المستودع والعناوين حقول من اليسار إلى اليمين، فضعها بين علامتي RLI وPDI، والعنوان ذو اللغتين يوضع كله بينهما كالوصف، فيظهر العربي على اليمين (الأداة &lrm;`code/arabic_text.py`&lrm; تفعل ذلك).
 7. أسماء المستودعات والمواضيع بالإنجليزية، ووسم الإصدار (tag) العربي كلمة عربية مع أرقام غربية.
 8. اكتب النص كاملًا في الوصف البديل لكل صورة، وانظر إلى صفحتك في تطبيق الهاتف أيضًا.
 
-التفاصيل والأمثلة في [الدليل الكامل](docs/ar/guide.md)، وأشهر أنماط تزيين الملف التمهيدي مجرَّبةً بالعربية في [صفحة الأنماط](docs/ar/styles.md): الشعارات والنص المتحرك والشارات والبطاقات. وفي [الطراز التراثي](docs/ar/heritage.md) طراز مأخوذ من الكتاب العربي: الفواتح والفواصل والأبواب والفوائد والعدّ بأبجد والشعر والحواشي والخطوط.
+التفاصيل والأمثلة في [الدليل الكامل](docs/ar/guide.md)، وأشهر أنماط تزيين الملف التمهيدي مجرَّبةً بالعربية في [صفحة الأنماط](docs/ar/styles.md): الشعارات والنص الذي يُكتب أمامك والشارات والبطاقات. وفي [الطراز التراثي](docs/ar/heritage.md) طراز مأخوذ من الكتاب العربي القديم: الفواتح والفواصل والأبواب والفوائد والعدّ بأبجد والشعر والحواشي والخطوط.
 
 ### الأدوات
 
@@ -107,7 +107,7 @@ python code/check_arabic_md.py README.md docs
 
 <div dir="rtl">
 
-- أداة تصنع وصف المستودع والعناوين ورسائل الالتزامات بالعلامات الخفية الصحيحة:
+- أداة تصنع وصف المستودع، وبالأمر &lrm;`title`&lrm; عناوين البلاغات وطلبات الدمج والإصدارات، وبالأمر &lrm;`commit`&lrm; رسائل الالتزامات، بالعلامات الخفية الصحيحة:
 
 </div>
 
@@ -118,15 +118,15 @@ gh api -X PATCH repos/OWNER/REPO -F description=@about.txt
 
 <div dir="rtl">
 
-- أداة تفحص الصفحة بعد رفعها كما يعرضها الموقع وكما يعرضها تطبيق الهاتف: [`code/page_audit.js`](code/page_audit.js)، تُلصق في وحدة التحكم في المتصفح، ثم يُشغَّل &lrm;`auditArabic("web")`&lrm; ثم &lrm;`auditArabic("phone")`&lrm;.
-- أداة ترسم نصًا عربيًا بخطوط ويندوز صورًا تُقرأ في الوضعين الداكن والفاتح (تختار أنت النص والخطوط واللون): [`code/make-font-samples.ps1`](code/make-font-samples.ps1).
+- أداة تفحص صفحة على github.com كما يعرضها الموقع وكما يعرضها تطبيق الهاتف: [`code/page_audit.js`](code/page_audit.js)، تُلصق في وحدة التحكم في المتصفح، ثم يُشغَّل &lrm;`auditArabic("web")`&lrm; ثم &lrm;`auditArabic("phone")`&lrm;.
+- أداة ترسم نصًا عربيًا بخطوط Windows على هيئة صور تُقرأ في الوضعين الداكن والفاتح (تختار أنت النص والخطوط واللون): [`code/make-font-samples.ps1`](code/make-font-samples.ps1).
 - أدوات تصنع صورًا من اليمين إلى اليسار في مستودعك: نصًّا يُكتب أمامك بخط عربي، أو ثابتًا بالخيار &lrm;`--still`&lrm; ([`code/typing_svg.py`](code/typing_svg.py))، وشارة وبطاقة إحصاءات وبطاقة اقتباس ([`code/arabic_cards.py`](code/arabic_cards.py))، وزخارف المخطوطات ([`code/ornaments.py`](code/ornaments.py)).
 - قالب جاهز لملف تمهيدي بالعربية والإنجليزية: [`templates/README.ar-en.md`](templates/README.ar-en.md).
 - اختبارات الأدوات: &lrm;`python code/test_tools.py`&lrm;.
 
-الأدوات تحتاج بايثون 3.10 أو أحدث، ولا تحتاج مكتبات إضافية.
+الأدوات تحتاج Python 3.10 أو أحدث، ولا تحتاج مكتبات إضافية.
 
-الإصدارات ووسومها والفروع والبلاغات والنقاشات في هذا المستودع اختبارات، وهي من أدلة صفحة الاختبارات.
+الإصدارات ووسومها والفروع والبلاغات والنقاشات في هذا المستودع مواد اختبار، تربط إليها صفحة الاختبارات شواهدَ.
 
 ### للذكاء الاصطناعي
 
@@ -222,10 +222,11 @@ chapters, notes, abjad numbering, verse, margin notes, fonts): [heritage style](
 
 ### Tools
 
-- `python code/check_arabic_md.py README.md docs`: checks Markdown files and prints each problem with its line.
+- `python code/check_arabic_md.py README.md docs`: checks Markdown files and prints each problem with its line and reason.
   Lines between `<!-- check-arabic: off -->` and `<!-- check-arabic: on -->` are not reported (for deliberate mistakes).
 - `python code/arabic_text.py about --ar "..." --en "..." --out about.txt`: builds the About text (and, with
-  `title`, issue / PR / release titles, and with `commit`, commit messages) with the right invisible marks.
+  `title`, issue / PR / release titles, and with `commit`, commit messages) with the right invisible marks. Then
+  `gh api -X PATCH repos/OWNER/REPO -F description=@about.txt` sets the About text.
 - [`code/make-font-samples.ps1`](code/make-font-samples.ps1): draws Arabic text in Windows fonts as pictures that
   read on dark and light pages (text, fonts and colours are parameters).
 - [`code/page_audit.js`](code/page_audit.js): paste into the browser console on a github.com page, run

@@ -20,8 +20,8 @@ in the examples below (test S13).
 |---|---|---|
 | Banner with an Arabic title | ✔ capsule-render. Arabic is joined and in order. The font is the reader's system font; `fontFamily` only works if the reader has that font. | S1 |
 | Footer wave | ✔ capsule-render with no text: the same in every language. | S2 |
-| Typing text | ✔ `code/typing_svg.py` makes the picture in your repo: it writes Arabic from the right and builds a Google font into it (`--still` for a fixed one). ⚠ readme-typing-svg types Arabic from the left, so the end of the sentence shows first. | S3 |
-| Badges with Arabic text | ✔ `code/arabic_cards.py badge`: label on the right, value on the left. ✘ shields.io pulls Arabic letters apart and reverses them. ⚠ badgen.net and the komarev views counter draw the letters right but put the label on the left. | S4, S8 |
+| Typing text | ✔ `code/typing_svg.py` makes the picture in your repo: it writes Arabic from the right and builds a Google font into it, so every reader sees it (`--still` for a fixed one). ⚠ readme-typing-svg types Arabic from the left, so the end of the sentence shows first. | S3 |
+| Badges with Arabic text | ✔ `code/arabic_cards.py badge`: label on the right, value on the left. ✘ shields.io pulls Arabic letters apart and reverses them. ⚠ badgen.net and the komarev views counter draw the letters right but put the label on the left (komarev: the count on the right; it can't be made in your repo, because the count changes with every visit). | S4, S8 |
 | Contribution streak card in Arabic | ✔ streak-stats with `locale=ar`: the whole card is Arabic and right to left. | S5 |
 | Stats card in Arabic | ✔ `code/arabic_cards.py stats` reads your numbers from GitHub: title and labels on the right, numbers on the left. It is a still picture: make it again to refresh (by hand or on a GitHub Actions schedule). ⚠ GitHub Stats Extended with `locale=ar` is left to right, the colons are on the wrong side and a long label can run into its number. | S5 |
 | Activity graph with an Arabic title | ⚠ `custom_title` takes Arabic; the axes stay in English and the days run left to right. | S6 |

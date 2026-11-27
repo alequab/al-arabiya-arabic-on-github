@@ -125,7 +125,7 @@ A ↓ — **website ✘ left to right · phone ✘ left to right**
 
 | الاسم | الوصف | الحالة |
 |---|---|---|
-| الإصدار | رقم النسخة | ✔ |
+| الإصدار | رقم الإصدار | ✔ |
 | الموقع | GitHub | ✔ |
 
 B ↓ — **website ✔ · phone ✔**
@@ -134,7 +134,7 @@ B ↓ — **website ✔ · phone ✔**
 
 | الاسم | الوصف | الحالة |
 |---|---|---|
-| الإصدار | رقم النسخة | ✔ |
+| الإصدار | رقم الإصدار | ✔ |
 | الموقع | GitHub | ✔ |
 
 </div>
@@ -143,7 +143,7 @@ C ↓ — **website ⚠ columns from the right, but the table itself stays on th
 
 <table dir="rtl">
 <tr><th>الاسم</th><th>الوصف</th><th>الحالة</th></tr>
-<tr><td>الإصدار</td><td>رقم النسخة</td><td>✔</td></tr>
+<tr><td>الإصدار</td><td>رقم الإصدار</td><td>✔</td></tr>
 <tr><td>الموقع</td><td>GitHub</td><td>✔</td></tr>
 </table>
 
@@ -462,7 +462,7 @@ Monospace. A ↓ inline code, B ↓ `<samp>`, C ↓ `<var>`, D ↓ code block wi
 
 <div dir="rtl">
 
-`نص عربي داخل كود`
+`نص عربي داخل شيفرة`
 
 <samp>نص عربي في samp</samp>
 
@@ -471,7 +471,7 @@ Monospace. A ↓ inline code, B ↓ `<samp>`, C ↓ `<var>`, D ↓ code block wi
 </div>
 
 ```text
-نص عربي داخل كتلة كود
+نص عربي داخل كتلة شيفرة
 ```
 
 ---
