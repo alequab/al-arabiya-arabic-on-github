@@ -12,7 +12,9 @@
 
 إن كان في نص الصورة كلمة لاتينية بين العربية (مثل «العربية على GitHub») فالصورة ترتّب النص من اليسار إلى اليمين، فتقع الكلمة اللاتينية في غير مكانها. فضع النص كله بين علامتي RLI وPDI، وهما في الرابط ‎`%E2%81%A7`‎ في أوله و‎`%E2%81%A9`‎ في آخره، كما في الأمثلة هنا (الاختبار S13).
 
-## صور من خدمات
+## الصور
+
+أكثر هذه الخدمات يرسم من اليسار إلى اليمين، ففي الدليل أداتان تصنعان الصورة في مستودعك من اليمين: typing_svg.py للنص الذي يُكتب أمامك، وarabic_cards.py للشارة وبطاقة الإحصاءات وبطاقة الاقتباس. انسخ الملفين من مجلد code إلى مستودعك، ويكفيهما Python 3.
 
 ### ✔ شعار علوي بعنوان عربي
 
@@ -50,38 +52,64 @@
 
 <div dir="rtl">
 
-### ⚠ نص يُكتب أمامك
+### ✔ نص يُكتب أمامك
 
-خدمة readme-typing-svg. المعامل font=Amiri يضمّن خطًا عربيًا حقيقيًا في الصورة. لكن الكتابة تبدأ من اليسار، فتظهر آخر الجملة أولًا. فاجعل كل سطر قصيرًا. (الاختبار S3)
+تصنع الأداة typing_svg.py في هذا الدليل الصورة في مستودعك: تكتب العربية من اليمين، وتضمّن خط Google في الصورة فيراه كل قارئ. أما خدمة readme-typing-svg فتكتب العربية من اليسار، فيظهر آخر الجملة أولًا. (الاختبار S3)
 
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com/?lines=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%20%D8%A8%D9%83%20%D9%81%D9%8A%20%D8%AF%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9;%D8%A7%D9%83%D8%AA%D8%A8%20%E2%81%A7%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9%20%D8%B9%D9%84%D9%89%20GitHub%E2%81%A9%20%D8%A8%D8%AB%D9%82%D8%A9&font=Amiri&center=true&width=500&size=32" alt="مرحبًا بك في دليل العربية">
+<img src="../assets/styles/typing.svg" alt="مرحبًا بك في دليل العربية. اكتب العربية على GitHub بثقة">
 
 </div>
 
 </div>
+
+```sh
+python code/typing_svg.py --line "مرحبًا بك في دليل العربية" --line "اكتب العربية على GitHub بثقة" --font Amiri --size 32 --width 560 --out docs/typing.svg
+```
 
 ```html
-<img src="https://readme-typing-svg.demolab.com/?lines=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%20%D8%A8%D9%83%20%D9%81%D9%8A%20%D8%AF%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9;%D8%A7%D9%83%D8%AA%D8%A8%20%E2%81%A7%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9%20%D8%B9%D9%84%D9%89%20GitHub%E2%81%A9%20%D8%A8%D8%AB%D9%82%D8%A9&font=Amiri&center=true&width=500&size=32" alt="مرحبًا بك في دليل العربية">
+<img src="docs/typing.svg" alt="مرحبًا بك في دليل العربية. اكتب العربية على GitHub بثقة">
 ```
 
 <div dir="rtl">
 
-### ⚠ الشارات بنص عربي
+### ✔ الشارات بنص عربي
 
-شارات shields.io تفكك الحروف العربية وتعكس ترتيبها، فلا تستعملها للعربية. أما badgen.net فترسمها صحيحة، وكذلك عداد الزيارات komarev. (الاختباران S4 وS8)
+تصنع الأداة arabic_cards.py شارة اسمها على اليمين وقيمتها على اليسار، كما تُقرأ العربية. أما شارات shields.io فتفكك الحروف العربية وتعكس ترتيبها، وbadgen.net ترسم الحروف صحيحة لكن الاسم على اليسار. (الاختبار S4)
 
 <div align="center">
 
-<img src="https://badgen.net/badge/%D8%A7%D9%84%D8%AA%D8%B1%D8%AE%D9%8A%D8%B5/MIT/green" alt="الترخيص: MIT"> <img src="https://komarev.com/ghpvc/?username=al-arabiya-arabic-on-github&label=%D8%B9%D8%AF%D8%AF%20%D8%A7%D9%84%D8%B2%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA&color=2ea44f" alt="عدد الزيارات">
+<img src="../assets/styles/badge.svg" alt="الترخيص: MIT">
+
+</div>
+
+</div>
+
+```sh
+python code/arabic_cards.py badge --label "الترخيص" --value MIT --out docs/badge-license.svg
+```
+
+```html
+<img src="docs/badge-license.svg" alt="الترخيص: MIT">
+```
+
+<div dir="rtl">
+
+### ⚠ عداد الزيارات
+
+عداد komarev يرسم الاسم العربي صحيحًا، لكن الاسم على اليسار والعدد على اليمين. ولا يُصنع في المستودع لأن العدد يتغير مع كل زيارة. (الاختبار S8)
+
+<div align="center">
+
+<img src="https://komarev.com/ghpvc/?username=al-arabiya-arabic-on-github&label=%D8%B9%D8%AF%D8%AF%20%D8%A7%D9%84%D8%B2%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA&color=2ea44f" alt="عدد الزيارات">
 
 </div>
 
 </div>
 
 ```html
-<img src="https://badgen.net/badge/%D8%A7%D9%84%D8%AA%D8%B1%D8%AE%D9%8A%D8%B5/MIT/green" alt="الترخيص: MIT"> <img src="https://komarev.com/ghpvc/?username=YOUR-NAME&label=%D8%B9%D8%AF%D8%AF%20%D8%A7%D9%84%D8%B2%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA&color=2ea44f" alt="عدد الزيارات">
+<img src="https://komarev.com/ghpvc/?username=YOUR-NAME&label=%D8%B9%D8%AF%D8%AF%20%D8%A7%D9%84%D8%B2%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA&color=2ea44f" alt="عدد الزيارات">
 ```
 
 <div dir="rtl">
@@ -104,27 +132,52 @@
 
 <div dir="rtl">
 
-### ⚠ بطاقة الإحصاءات بالعربية
+### ✔ بطاقة الإحصاءات بالعربية
 
-خدمة GitHub Stats Extended (خليفة github-readme-stats الذي توقف تطويره) مع locale=ar: العناوين عربية، لكن النقطتين في الجهة الخطأ والبطاقة من اليسار. وعنوانها الذي تكتبه الخدمة فيه اسم GitHub بحروف عربية، فاكتب عنوانك بالمعامل custom_title، والنص بين RLI وPDI كما في المثال. (الاختبار S5)
+تقرأ الأداة arabic_cards.py أرقامك من GitHub وتصنع البطاقة: العنوان والأسماء على اليمين والأرقام على اليسار. وهي صورة ثابتة، فأعد صنعها لتتجدد الأرقام، بيدك أو بجدول في GitHub Actions كالذي تحتها. أما خدمة GitHub Stats Extended مع locale=ar فبطاقتها من اليسار إلى اليمين، والنقطتان في الجهة الخطأ، وقد يلتصق الرقم بالاسم الطويل. (الاختبار S5)
 
 <div align="center">
 
-<img src="https://github-stats-extended.vercel.app/api?username=anuraghazra&locale=ar&show_icons=true&custom_title=%E2%81%A7%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1%D8%A7%D8%AA%20GitHub%E2%81%A9" alt="إحصاءات GitHub">
+<img src="../assets/styles/stats.svg" alt="إحصاءات GitHub">
 
 </div>
 
 </div>
 
-```html
-<img src="https://github-stats-extended.vercel.app/api?username=YOUR-NAME&locale=ar&show_icons=true&custom_title=%E2%81%A7%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1%D8%A7%D8%AA%20GitHub%E2%81%A9" alt="إحصاءات GitHub">
+```sh
+python code/arabic_cards.py stats --user YOUR-NAME --out docs/stats.svg
 ```
+
+```yaml
+# .github/workflows/stats.yml
+name: stats
+on:
+  schedule: [{cron: "0 3 * * *"}]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python code/arabic_cards.py stats --user YOUR-NAME --out docs/stats.svg
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: |
+          git config user.name github-actions
+          git config user.email github-actions@users.noreply.github.com
+          git add docs/stats.svg
+          git diff --cached --quiet || git commit -m "$(printf '\u2067تحديث الإحصاءات\u2069') · Update stats"
+          git push
+```
+
 
 <div dir="rtl">
 
-### ✔ رسم النشاط بعنوان عربي
+### ⚠ رسم النشاط بعنوان عربي
 
-المعامل custom_title يقبل العربية، أما المحاور فإنجليزية. (الاختبار S6)
+المعامل custom_title يقبل العربية، أما المحاور فإنجليزية، والأيام تسير من اليسار إلى اليمين. (الاختبار S6)
 
 <div align="center">
 
@@ -142,18 +195,18 @@
 
 ### ✔ بطاقة اقتباس عربي
 
-خدمة github-readme-quotes: النص العربي متصل وصحيح، إلا أن الشَّرطة قبل اسم القائل تقع على يساره. (الاختبار S7)
+تصنع الأداة arabic_cards.py بطاقة الاقتباس من اليمين: النص بين علامتي «»، واسم القائل تحته بعد شَرطة. أما خدمة github-readme-quotes فتضع النص على اليسار، والشَّرطة قبل اسم القائل على يساره. (الاختبار S7)
 
 <div align="center">
 
-<img src="https://quotes-github-readme.vercel.app/api?type=horizontal&quote=%D9%85%D9%86%20%D8%AC%D8%AF%D9%8E%D9%91%20%D9%88%D8%AC%D8%AF%D8%8C%20%D9%88%D9%85%D9%86%20%D8%B2%D8%B1%D8%B9%20%D8%AD%D8%B5%D8%AF&author=%D9%85%D8%AB%D9%84%20%D8%B9%D8%B1%D8%A8%D9%8A" alt="من جدَّ وجد، ومن زرع حصد">
+<img src="../assets/styles/quote.svg" alt="من جدّ وجد، ومن زرع حصد. مثل عربي">
 
 </div>
 
 </div>
 
-```html
-<img src="https://quotes-github-readme.vercel.app/api?type=horizontal&quote=%D9%85%D9%86%20%D8%AC%D8%AF%D9%8E%D9%91%20%D9%88%D8%AC%D8%AF%D8%8C%20%D9%88%D9%85%D9%86%20%D8%B2%D8%B1%D8%B9%20%D8%AD%D8%B5%D8%AF&author=%D9%85%D8%AB%D9%84%20%D8%B9%D8%B1%D8%A8%D9%8A" alt="من جدَّ وجد، ومن زرع حصد">
+```sh
+python code/arabic_cards.py quote --text "من جدّ وجد، ومن زرع حصد" --author "مثل عربي" --out docs/quote.svg
 ```
 
 <div dir="rtl">

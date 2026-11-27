@@ -4,7 +4,8 @@
 
 A README style taken from the classical Arabic book: opening and closing formulas, chapters (أبواب) and sections
 (فصول), "benefit" and "caution" notes, abjad numbering, margin notes and verse laid out in two halves. Everything is
-text except two parts that are pictures (the heritage fonts and the geometric band), which you can leave out.
+text except the parts that are pictures (the heritage fonts, the geometric band and the manuscript ornaments),
+which you can leave out.
 **See it live on the [Arabic page](../ar/heritage.md)**; this page explains the same parts with copy-paste code. Tested on the website and
 with `page_audit.js` in phone mode (November 2026).
 
@@ -20,8 +21,9 @@ Marks: ✔ works · ⚠ works with a flaw · ✘ doesn't work
 | Quran verses | ✔ ⚠ | Ornate brackets around the verse, as in «﴿ وَقُل رَّبِّ زِدْنِي عِلْمًا ﴾» (their look depends on the reader's font; Windows draws them close to plain brackets): type U+FD3F first, then the verse, then U+FD3E. Check the text against a mushaf |
 | Verse (poetry) | ✔ ⚠ | Both halves on one centered `<p dir="rtl">` line with `&emsp;` between; on narrow screens the second half wraps under the first |
 | Margin notes | ✔ | Not `[^1]` (that adds an English "Footnotes" section on the left): `<sup>(١)</sup>` after the word and a «الحواشي» section at the end |
-| Heritage fonts | ⚠ picture | readme-typing-svg embeds Google Fonts: Amiri, Scheherazade New (Naskh), Reem Kufi, Kufam (Kufic), Aref Ruqaa (Ruqʿa), Noto Nastaliq Urdu (Nastaʿlīq), Rakkas. It types from the left until the text is complete; use `repeat=false` |
+| Heritage fonts | ✔ picture | `code/typing_svg.py` builds the Google font into the picture and writes from the right: Amiri, Scheherazade New (Naskh), Reem Kufi, Kufam (Kufic), Aref Ruqaa (Ruqʿa), Noto Nastaliq Urdu (Nastaʿlīq), Rakkas. readme-typing-svg types Arabic from the left |
 | Geometric band | ✔ picture | `docs/assets/heritage-band.svg`: eight-pointed stars, transparent background, no outside service |
+| Manuscript ornaments | ✔ picture | `code/ornaments.py`: shamsa (sun rosette), title cartouche (ʿunwān), interlace border, arabesque vine divider, arcade of pointed arches; transparent, gold and lapis blue (test S14) |
 | Justified lines | ✔ | `<div dir="rtl" align="justify">`, like Word's Justify: both edges straight. The browser widens spaces, it doesn't stretch letters. The whole Arabic page uses it. Phone app not verified |
 | Closing (خاتمة) | ✔ | The closing praise («وآخر دعوانا…») as a centered `<h4 dir="rtl">`, then the completion line and the Hijri date |
 
@@ -97,10 +99,14 @@ Margin note:
 <sup>(١)</sup> نص الحاشية.
 ```
 
-Heritage font title (picture; the text URL-encoded in `lines=`, spaces in the font name as `+`):
+Heritage font title (picture made by `code/typing_svg.py`; `--once` types it once and keeps it):
+
+```sh
+python code/typing_svg.py --line "دليل" --font "Aref Ruqaa" --size 44 --color "#C9A24D" --width 520 --height 90 --once --out docs/assets/title.svg
+```
 
 ```html
-<img src="https://readme-typing-svg.demolab.com/?lines=%D8%AF%D9%84%D9%8A%D9%84&font=Aref+Ruqaa&center=true&width=520&height=90&size=44&repeat=false&color=C9A24D" alt="دليل">
+<img src="docs/assets/title.svg" alt="دليل">
 ```
 
 Geometric band (picture, from your own repo):
@@ -109,6 +115,22 @@ Geometric band (picture, from your own repo):
 <div align="center">
 
 <img src="docs/assets/heritage-band.svg" width="840" alt="">
+
+</div>
+```
+
+Manuscript ornaments (pictures made in your repo; `--gold` and `--blue` change the colours):
+
+```sh
+python code/ornaments.py --out-dir docs/assets/ornaments --title "دليل الكتابة العربية"
+```
+
+```html
+<div align="center">
+
+<img src="docs/assets/ornaments/cartouche.svg" alt="دليل الكتابة العربية">
+
+<img src="docs/assets/ornaments/interlace.svg" alt="">
 
 </div>
 ```

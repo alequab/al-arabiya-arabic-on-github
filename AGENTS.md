@@ -62,9 +62,12 @@ from `code/page_audit.js`, which copies the app. Evidence: `tests/lab.md` (tests
 
 ## Picture services (banners, badges, cards)
 
-**13a.** Badges with Arabic text: not shields.io (it pulls Arabic letters apart and reverses them); badgen.net and the
-komarev counter draw Arabic correctly. capsule-render banners and readme-typing-svg (`font=Amiri`) take
-Arabic; the typing animation starts from the left. Stats cards: streak-stats `locale=ar` is fully RTL.
+**13a.** Most services draw their pictures left to right. For right-to-left pictures, make them in the repo:
+`code/typing_svg.py` (typing text, written from the right, Google font built in), `code/arabic_cards.py` (badge with
+the label on the right, stats card, quote card) and `code/ornaments.py` (manuscript ornaments) (tests S3–S5, S7,
+S14). Badges: never shields.io (it pulls Arabic letters apart and reverses them); badgen.net and the komarev counter
+draw the letters right but put the label on the left. capsule-render banners take Arabic. Stats cards:
+streak-stats `locale=ar` is fully RTL.
 Picture text that mixes Arabic with a Latin word: wrap it in RLI…PDI (`%E2%81%A7`…`%E2%81%A9` in the URL), or
 the Latin word lands on the wrong side (test S13). Details: `docs/en/styles.md`.
 

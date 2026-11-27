@@ -58,8 +58,9 @@ gh api -X PATCH repos/OWNER/REPO -F description=@about.txt
 
 - أداة تفحص الصفحة بعد رفعها كما يعرضها الموقع وكما يعرضها تطبيق الهاتف: [`code/page_audit.js`](code/page_audit.js)، تُلصق في وحدة التحكم في المتصفح، ثم يُشغَّل &lrm;`auditArabic("web")`&lrm; ثم &lrm;`auditArabic("phone")`&lrm;.
 - أداة ترسم نصًا عربيًا بخطوط ويندوز صورًا تُقرأ في الوضعين الداكن والفاتح (تختار أنت النص والخطوط واللون): [`code/make-font-samples.ps1`](code/make-font-samples.ps1).
+- أدوات تصنع صورًا من اليمين إلى اليسار في مستودعك: نصًّا يُكتب أمامك بخط عربي ([`code/typing_svg.py`](code/typing_svg.py))، وشارة وبطاقة إحصاءات وبطاقة اقتباس ([`code/arabic_cards.py`](code/arabic_cards.py))، وزخارف المخطوطات ([`code/ornaments.py`](code/ornaments.py)).
 - قالب جاهز لملف تمهيدي بالعربية والإنجليزية: [`templates/README.ar-en.md`](templates/README.ar-en.md).
-- اختبارات الأداتين: &lrm;`python code/test_tools.py`&lrm;.
+- اختبارات الأدوات: &lrm;`python code/test_tools.py`&lrm;.
 
 الأدوات تحتاج بايثون 3.10 أو أحدث، ولا تحتاج مكتبات إضافية.
 
@@ -106,6 +107,9 @@ chapters, notes, abjad numbering, verse, margin notes, fonts): [heritage style](
   read on dark and light pages (text, fonts and colours are parameters).
 - [`code/page_audit.js`](code/page_audit.js): paste into the browser console on a github.com page, run
   `auditArabic("web")` and `auditArabic("phone")`; lists what reads wrong on the website and in the phone app.
+- Right-to-left pictures made in your repo: typing text in an Arabic font
+  ([`code/typing_svg.py`](code/typing_svg.py)), badge, stats card and quote card
+  ([`code/arabic_cards.py`](code/arabic_cards.py)), manuscript ornaments ([`code/ornaments.py`](code/ornaments.py)).
 - A ready README template in Arabic and English: [`templates/README.ar-en.md`](templates/README.ar-en.md).
 - Tests: `python code/test_tools.py`. Python 3.10 or newer, no extra packages.
 

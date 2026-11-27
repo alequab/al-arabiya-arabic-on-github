@@ -1,10 +1,14 @@
-"""Tests for check_arabic_md.py and arabic_text.py:  python code/test_tools.py"""
+"""Tests for the tools in code/ (the picture tools offline, without fonts):  python code/test_tools.py"""
 import pathlib
+import re
 import sys
 import unittest
 
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
+import arabic_cards  # noqa: E402
 import arabic_text  # noqa: E402
+import ornaments  # noqa: E402
+import typing_svg  # noqa: E402
 from check_arabic_md import check_text, first_strong  # noqa: E402
 
 
@@ -268,6 +272,49 @@ class TextTool(unittest.TestCase):
     def test_title_no_double_marks(self):
         t = arabic_text.title("\u2067README: الجدول\u2069")
         self.assertEqual(t, "\u2067README: الجدول\u2069")
+
+
+class Pictures(unittest.TestCase):
+    def num(self, svg, pattern):
+        return [float(x) for x in re.findall(pattern, svg)]
+
+    def test_typing_from_the_right(self):
+        svg = typing_svg.build(["مرحبًا بك", "سطر <ثانٍ>"], width=600)
+        self.assertIn("direction='rtl'", svg)
+        self.assertIn("&lt;ثانٍ&gt;", svg)                                  # text is escaped
+        first_x = self.num(svg, r"attributeName='x' values='([0-9.]+);")
+        self.assertTrue(all(x > 300 for x in first_x))                      # the uncovering starts on the right
+        once = typing_svg.build(["سطر", "آخر"], once=True)
+        self.assertIn("fill='freeze'", once)
+        self.assertEqual(once.count("<text"), 1)                            # --once keeps only the first line
+        with self.assertRaises(ValueError):
+            typing_svg.build(["سطر", " "])
+
+    def test_controls_not_counted(self):
+        self.assertEqual(typing_svg.CONTROLS.sub("", "\u2067نص\u2069"), "نص")
+
+    def test_badge_label_on_the_right(self):
+        svg = arabic_cards.badge("الترخيص", "MIT")
+        xs = self.num(svg, r"<text x='([0-9.]+)'")
+        self.assertGreater(xs[0], xs[1])                                    # label right of the value
+
+    def test_quote_and_stats(self):
+        q = arabic_cards.quote("من جدّ وجد", "مثل عربي")
+        self.assertIn("«من جدّ وجد»", q)
+        self.assertIn("— مثل عربي", q)
+        s = arabic_cards.stats({"stars": 84000, "commits": 38}, "إحصاءات")
+        self.assertIn(">84k<", s)
+        self.assertIn("مجموع النجوم", s)
+        self.assertNotIn("البلاغات", s)                                     # only the numbers given
+        self.assertEqual(arabic_cards.fmt_num(1234), "1.2k")
+        self.assertEqual(arabic_cards.fmt_num(999), "999")
+
+    def test_ornaments(self):
+        for svg in (ornaments.shamsa("#C9A24D", "#2B6A8F"), ornaments.interlace("#C9A24D", "#2B6A8F"),
+                    ornaments.arabesque("#C9A24D", "#2B6A8F"), ornaments.arcade("#C9A24D", "#2B6A8F")):
+            self.assertTrue(svg.startswith("<svg xmlns='http://www.w3.org/2000/svg' viewBox="))
+            self.assertIn("<title>", svg)
+        self.assertIn("scale(-1 1)", ornaments.arabesque("#C9A24D", "#2B6A8F"))   # mirrored halves
 
 
 if __name__ == "__main__":

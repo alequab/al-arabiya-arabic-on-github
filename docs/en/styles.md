@@ -10,6 +10,8 @@ In the code to copy, replace `YOUR-NAME` with your GitHub user name (the live pi
 
 ✔ works · ⚠ works with a flaw · ✘ does not work
 
+Most of these services draw left to right, so this guide has two tools that make the picture in your repo, right to left: `code/typing_svg.py` (typing text) and `code/arabic_cards.py` (badge, stats card, quote card). Copy the two files into your repo; they need only Python 3.
+
 **Arabic with a Latin word in a picture's text** (`العربية على GitHub`): the picture lays the text out left to
 right, so the Latin word lands on the wrong side. Wrap the text in RLI…PDI (`%E2%81%A7` … `%E2%81%A9` in the URL), as
 in the examples below (test S13).
@@ -18,12 +20,12 @@ in the examples below (test S13).
 |---|---|---|
 | Banner with an Arabic title | ✔ capsule-render. Arabic is joined and in order. The font is the reader's system font; `fontFamily` only works if the reader has that font. | S1 |
 | Footer wave | ✔ capsule-render with no text: the same in every language. | S2 |
-| Typing text | ⚠ readme-typing-svg. `font=Amiri` embeds a real Arabic font in the picture. But it types from the left, so the end of the sentence shows first: keep each line short. | S3 |
-| Badges with Arabic text | ⚠ shields.io pulls Arabic letters apart and reverses them: don't use it for Arabic. badgen.net draws Arabic correctly, and so does the komarev views counter. | S4, S8 |
+| Typing text | ✔ `code/typing_svg.py` makes the picture in your repo: it writes Arabic from the right and builds a Google font into it. ⚠ readme-typing-svg types Arabic from the left, so the end of the sentence shows first. | S3 |
+| Badges with Arabic text | ✔ `code/arabic_cards.py badge`: label on the right, value on the left. ✘ shields.io pulls Arabic letters apart and reverses them. ⚠ badgen.net and the komarev views counter draw the letters right but put the label on the left. | S4, S8 |
 | Contribution streak card in Arabic | ✔ streak-stats with `locale=ar`: the whole card is Arabic and right to left. | S5 |
-| Stats card in Arabic | ⚠ GitHub Stats Extended (the successor of the unmaintained github-readme-stats) with `locale=ar`: Arabic labels, but the colons are on the wrong side and the card is left to right. Its own Arabic title spells GitHub in Arabic letters: set your own with `custom_title`, wrapped in RLI…PDI as in the example. | S5 |
-| Activity graph with an Arabic title | ✔ `custom_title` takes Arabic; the axes stay in English. | S6 |
-| Arabic quote card | ✔ github-readme-quotes: the Arabic is joined and in order; the dash before the author lands on its left. | S7 |
+| Stats card in Arabic | ✔ `code/arabic_cards.py stats` reads your numbers from GitHub: title and labels on the right, numbers on the left. It is a still picture: make it again to refresh (by hand or on a GitHub Actions schedule). ⚠ GitHub Stats Extended with `locale=ar` is left to right, the colons are on the wrong side and a long label can run into its number. | S5 |
+| Activity graph with an Arabic title | ⚠ `custom_title` takes Arabic; the axes stay in English and the days run left to right. | S6 |
+| Arabic quote card | ✔ `code/arabic_cards.py quote`: right-aligned, in «», the author under it after a dash. ⚠ github-readme-quotes puts the text on the left and the dash on the author's left. | S7 |
 | Skill icons | ✔ skillicons: no text, the same in every language. | S9 |
 | Picture beside the text | ✔ An image with `align="left"` inside the RTL div; the Arabic wraps around it from the right. | S10 |
 | Arabic and English side by side | ✔ A two-column table, the Arabic cell with `dir="rtl"` on the right. | S10 |
@@ -47,14 +49,22 @@ in the examples below (test S13).
 
 ### Typing text
 
+```sh
+python code/typing_svg.py --line "مرحبًا بك في دليل العربية" --line "اكتب العربية على GitHub بثقة" --font Amiri --size 32 --width 560 --out docs/typing.svg
+```
+
 ```html
-<img src="https://readme-typing-svg.demolab.com/?lines=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%20%D8%A8%D9%83%20%D9%81%D9%8A%20%D8%AF%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9;%D8%A7%D9%83%D8%AA%D8%A8%20%E2%81%A7%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9%20%D8%B9%D9%84%D9%89%20GitHub%E2%81%A9%20%D8%A8%D8%AB%D9%82%D8%A9&font=Amiri&center=true&width=500&size=32" alt="مرحبًا بك في دليل العربية">
+<img src="docs/typing.svg" alt="مرحبًا بك في دليل العربية. اكتب العربية على GitHub بثقة">
 ```
 
 ### Badges with Arabic text
 
+```sh
+python code/arabic_cards.py badge --label "الترخيص" --value MIT --out docs/badge-license.svg
+```
+
 ```html
-<img src="https://badgen.net/badge/%D8%A7%D9%84%D8%AA%D8%B1%D8%AE%D9%8A%D8%B5/MIT/green" alt="الترخيص: MIT"> <img src="https://komarev.com/ghpvc/?username=YOUR-NAME&label=%D8%B9%D8%AF%D8%AF%20%D8%A7%D9%84%D8%B2%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA&color=2ea44f" alt="عدد الزيارات">
+<img src="docs/badge-license.svg" alt="الترخيص: MIT"> <img src="https://komarev.com/ghpvc/?username=YOUR-NAME&label=%D8%B9%D8%AF%D8%AF%20%D8%A7%D9%84%D8%B2%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA&color=2ea44f" alt="عدد الزيارات">
 ```
 
 ### Contribution streak card in Arabic
@@ -65,8 +75,34 @@ in the examples below (test S13).
 
 ### Stats card in Arabic
 
-```html
-<img src="https://github-stats-extended.vercel.app/api?username=YOUR-NAME&locale=ar&show_icons=true&custom_title=%E2%81%A7%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1%D8%A7%D8%AA%20GitHub%E2%81%A9" alt="إحصاءات GitHub">
+```sh
+python code/arabic_cards.py stats --user YOUR-NAME --out docs/stats.svg
+```
+
+To refresh it every day:
+
+```yaml
+# .github/workflows/stats.yml
+name: stats
+on:
+  schedule: [{cron: "0 3 * * *"}]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python code/arabic_cards.py stats --user YOUR-NAME --out docs/stats.svg
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: |
+          git config user.name github-actions
+          git config user.email github-actions@users.noreply.github.com
+          git add docs/stats.svg
+          git diff --cached --quiet || git commit -m "$(printf '\u2067تحديث الإحصاءات\u2069') · Update stats"
+          git push
 ```
 
 ### Activity graph with an Arabic title
@@ -77,8 +113,12 @@ in the examples below (test S13).
 
 ### Arabic quote card
 
+```sh
+python code/arabic_cards.py quote --text "من جدّ وجد، ومن زرع حصد" --author "مثل عربي" --out docs/quote.svg
+```
+
 ```html
-<img src="https://quotes-github-readme.vercel.app/api?type=horizontal&quote=%D9%85%D9%86%20%D8%AC%D8%AF%D9%8E%D9%91%20%D9%88%D8%AC%D8%AF%D8%8C%20%D9%88%D9%85%D9%86%20%D8%B2%D8%B1%D8%B9%20%D8%AD%D8%B5%D8%AF&author=%D9%85%D8%AB%D9%84%20%D8%B9%D8%B1%D8%A8%D9%8A" alt="من جدَّ وجد، ومن زرع حصد">
+<img src="docs/quote.svg" alt="من جدّ وجد، ومن زرع حصد. مثل عربي">
 ```
 
 ### Skill icons

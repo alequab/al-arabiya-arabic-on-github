@@ -33,7 +33,7 @@ Footer wave (capsule-render, no text). Works the same in any language.
 
 ### S3
 
-Typing text (readme-typing-svg) in Arabic. A: default font. B: `font=Amiri` (the service embeds the font in the picture).
+Typing text in Arabic. A: readme-typing-svg, default font. B: readme-typing-svg `font=Amiri` (the service embeds the font in the picture). C: made in this repo by `code/typing_svg.py --font Amiri` (writes from the right).
 
 <div align="center">
 
@@ -45,21 +45,25 @@ B ↓
 
 <img src="https://readme-typing-svg.demolab.com/?lines=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%20%D8%A8%D9%83%20%D9%81%D9%8A%20%D8%AF%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9;%D8%A7%D9%83%D8%AA%D8%A8%20%E2%81%A7%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9%20%D8%B9%D9%84%D9%89%20GitHub%E2%81%A9%20%D8%A8%D8%AB%D9%82%D8%A9&font=Amiri&center=true&width=500&size=32" alt="مرحبًا بك في دليل العربية">
 
+C ↓
+
+<img src="../docs/assets/styles/typing.svg" alt="مرحبًا بك في دليل العربية. اكتب العربية على GitHub بثقة">
+
 </div>
 
 ---
 
 ### S4
 
-Badges with Arabic text. A: shields.io. B: shields.io `for-the-badge`. C: badgen.net.
+Badges with Arabic text. A: shields.io. B: shields.io `for-the-badge`. C: badgen.net. D: `code/arabic_cards.py badge`.
 
-A ↓ <img src="https://img.shields.io/badge/%D8%A7%D9%84%D8%AA%D8%B1%D8%AE%D9%8A%D8%B5-MIT-2ea44f" alt="الترخيص: MIT"> B ↓ <img src="https://img.shields.io/badge/%D8%A7%D9%84%D8%AA%D8%B1%D8%AE%D9%8A%D8%B5-MIT-2ea44f?style=for-the-badge" alt="الترخيص: MIT"> C ↓ <img src="https://badgen.net/badge/%D8%A7%D9%84%D8%AA%D8%B1%D8%AE%D9%8A%D8%B5/MIT/green" alt="الترخيص: MIT">
+A ↓ <img src="https://img.shields.io/badge/%D8%A7%D9%84%D8%AA%D8%B1%D8%AE%D9%8A%D8%B5-MIT-2ea44f" alt="الترخيص: MIT"> B ↓ <img src="https://img.shields.io/badge/%D8%A7%D9%84%D8%AA%D8%B1%D8%AE%D9%8A%D8%B5-MIT-2ea44f?style=for-the-badge" alt="الترخيص: MIT"> C ↓ <img src="https://badgen.net/badge/%D8%A7%D9%84%D8%AA%D8%B1%D8%AE%D9%8A%D8%B5/MIT/green" alt="الترخيص: MIT"> D ↓ <img src="../docs/assets/styles/badge.svg" alt="الترخيص: MIT">
 
 ---
 
 ### S5
 
-Stats cards in Arabic (locale=ar). A: streak stats (has real right-to-left support). B: GitHub stats (Extended).
+Stats cards in Arabic (locale=ar). A: streak stats (has real right-to-left support). B: GitHub stats (Extended). C: `code/arabic_cards.py stats` (still picture of this repo owner's numbers, 2026-11-27).
 
 A ↓
 
@@ -68,6 +72,10 @@ A ↓
 B ↓
 
 <img src="https://github-stats-extended.vercel.app/api?username=anuraghazra&locale=ar&show_icons=true&custom_title=%E2%81%A7%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1%D8%A7%D8%AA%20GitHub%E2%81%A9" alt="إحصاءات GitHub">
+
+C ↓
+
+<img src="../docs/assets/styles/stats.svg" alt="إحصاءات GitHub">
 
 ---
 
@@ -81,9 +89,15 @@ Activity graph with an Arabic title. `custom_title`.
 
 ### S7
 
-Quote card with an Arabic quote. `quote` and `author`.
+Quote card with an Arabic quote. A: github-readme-quotes `quote` and `author`. B: `code/arabic_cards.py quote`.
+
+A ↓
 
 <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&quote=%D9%85%D9%86%20%D8%AC%D8%AF%D9%8E%D9%91%20%D9%88%D8%AC%D8%AF%D8%8C%20%D9%88%D9%85%D9%86%20%D8%B2%D8%B1%D8%B9%20%D8%AD%D8%B5%D8%AF&author=%D9%85%D8%AB%D9%84%20%D8%B9%D8%B1%D8%A8%D9%8A" alt="من جدَّ وجد، ومن زرع حصد">
+
+B ↓
+
+<img src="../docs/assets/styles/quote.svg" alt="من جدّ وجد، ومن زرع حصد. مثل عربي">
 
 ---
 
@@ -170,7 +184,7 @@ Centered nav bar with icons. Emoji before Arabic links, inside a centered block.
 ---
 ### S13
 
-Arabic text with a Latin word inside a picture. A: as is. B: wrapped in RLI…PDI (U+2067…U+2069) in the URL.
+Arabic text with a Latin word inside a picture. A: as is. B: wrapped in RLI…PDI (U+2067…U+2069) in the URL. C: typing service, wrapped. D: `code/typing_svg.py`, not wrapped (the picture itself is right to left).
 
 <div align="center">
 
@@ -186,6 +200,62 @@ C ↓ typing text, wrapped
 
 <img src="https://readme-typing-svg.demolab.com/?lines=%E2%81%A7%D8%A7%D9%83%D8%AA%D8%A8%20%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9%20%D8%B9%D9%84%D9%89%20GitHub%20%D8%A8%D8%AB%D9%82%D8%A9%E2%81%A9&font=Amiri&center=true&width=500&size=32&pause=5000" alt="اكتب العربية على GitHub بثقة">
 
+D ↓ made in this repo, not wrapped
+
+<img src="../docs/assets/styles/typing-mixed.svg" alt="اكتب العربية على GitHub بثقة">
+
 </div>
 
 ---
+
+---
+
+### S14
+
+Manuscript ornaments as pictures, made by `code/ornaments.py` (transparent; gold and blue): shamsa (sun rosette),
+title cartouche, interlace border, arabesque vine divider, arcade of pointed arches.
+
+<div align="center">
+
+<img src="../docs/assets/ornaments/shamsa.svg" width="110" alt="شمسة">
+
+<img src="../docs/assets/ornaments/cartouche.svg" alt="دليل الكتابة العربية">
+
+<img src="../docs/assets/ornaments/interlace.svg" alt="ضفيرة">
+
+<img src="../docs/assets/ornaments/arabesque.svg" alt="رقش">
+
+<img src="../docs/assets/ornaments/arcade.svg" alt="قناطر">
+
+</div>
+
+---
+
+### S15
+
+Ornament characters typed as text, inside the RTL div. A: old (manuscripts and old print). B: common today. C: pairs
+that face each other, typed in reading order (opening one first).
+
+<div dir="rtl">
+
+A ↓
+
+<p>۞ · ۩ · ٭ · ❦ · ❧ · ⁂ · ※ · ⸙ · ﴾ ﴿</p>
+
+B ↓
+
+<p>❀ · ✿ · ❁ · ✾ · ❖ · ◈ · ✦ · ✧ · ღ · ꕥ · ࿐</p>
+
+C ↓
+
+<p>꧁ العربية ꧂</p>
+
+<p>༺ العربية ༻</p>
+
+<p>⊱ العربية ⊰</p>
+
+<p>❦ العربية ❧</p>
+
+<p>ﮩ٨ـﮩﮩ٨ـ ۞ ـ٨ﮩﮩـ٨ﮩ</p>
+
+</div>

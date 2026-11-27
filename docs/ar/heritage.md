@@ -232,49 +232,53 @@
 
 ## ۞ الخطوط التراثية (صور)
 
-⚠ لا يمكن اختيار الخط في نص GitHub، فهو خط جهاز القارئ. فإن أردت عنوانًا بخط النسخ أو الكوفي أو الرقعة أو النستعليق، فاجعله صورة من خدمة readme-typing-svg، فهي تضمّن خطوط Google في الصورة. وعيبها أنها تكتب النص من اليسار حتى يتمّ، فاجعل `repeat=false` ليبقى النص بعد ذلك ثابتًا. واكتب النص كله في الوصف البديل (alt).
+⚠ لا يمكن اختيار الخط في نص GitHub، فهو خط جهاز القارئ. فإن أردت عنوانًا بخط النسخ أو الكوفي أو الرقعة أو النستعليق، فاجعله صورة تصنعها أداة الدليل typing_svg.py، فهي تضمّن خط Google في الصورة وتكتب النص من اليمين ثم يبقى ثابتًا. أما خدمة readme-typing-svg فتكتب العربية من اليسار، فيظهر آخر الجملة أولًا. واكتب النص كله في الوصف البديل (alt).
 
 <div align="center">
 
 <p dir="rtl"><b>النسخ</b> · Amiri</p>
 
-<img src="https://readme-typing-svg.demolab.com/?lines=%D8%AF%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D9%83%D8%AA%D8%A7%D8%A8%D8%A9%20%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9&font=Amiri&center=true&width=520&height=90&size=44&repeat=false&color=C9A24D" alt="دليل الكتابة العربية">
+<img src="../assets/heritage/font-amiri.svg" alt="دليل الكتابة العربية">
 
 <p dir="rtl"><b>النسخ</b> · Scheherazade New</p>
 
-<img src="https://readme-typing-svg.demolab.com/?lines=%D8%AF%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D9%83%D8%AA%D8%A7%D8%A8%D8%A9%20%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9&font=Scheherazade+New&center=true&width=520&height=90&size=44&repeat=false&color=C9A24D" alt="دليل الكتابة العربية">
+<img src="../assets/heritage/font-scheherazade-new.svg" alt="دليل الكتابة العربية">
 
 <p dir="rtl"><b>الكوفي</b> · Reem Kufi</p>
 
-<img src="https://readme-typing-svg.demolab.com/?lines=%D8%AF%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D9%83%D8%AA%D8%A7%D8%A8%D8%A9%20%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9&font=Reem+Kufi&center=true&width=520&height=90&size=44&repeat=false&color=C9A24D" alt="دليل الكتابة العربية">
+<img src="../assets/heritage/font-reem-kufi.svg" alt="دليل الكتابة العربية">
 
 <p dir="rtl"><b>الكوفي</b> · Kufam</p>
 
-<img src="https://readme-typing-svg.demolab.com/?lines=%D8%AF%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D9%83%D8%AA%D8%A7%D8%A8%D8%A9%20%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9&font=Kufam&center=true&width=520&height=90&size=44&repeat=false&color=C9A24D" alt="دليل الكتابة العربية">
+<img src="../assets/heritage/font-kufam.svg" alt="دليل الكتابة العربية">
 
 <p dir="rtl"><b>الرقعة</b> · Aref Ruqaa</p>
 
-<img src="https://readme-typing-svg.demolab.com/?lines=%D8%AF%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D9%83%D8%AA%D8%A7%D8%A8%D8%A9%20%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9&font=Aref+Ruqaa&center=true&width=520&height=90&size=44&repeat=false&color=C9A24D" alt="دليل الكتابة العربية">
+<img src="../assets/heritage/font-aref-ruqaa.svg" alt="دليل الكتابة العربية">
 
 <p dir="rtl"><b>النستعليق</b> · Noto Nastaliq Urdu</p>
 
-<img src="https://readme-typing-svg.demolab.com/?lines=%D8%AF%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D9%83%D8%AA%D8%A7%D8%A8%D8%A9%20%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9&font=Noto+Nastaliq+Urdu&center=true&width=520&height=90&size=44&repeat=false&color=C9A24D" alt="دليل الكتابة العربية">
+<img src="../assets/heritage/font-noto-nastaliq-urdu.svg" alt="دليل الكتابة العربية">
 
 <p dir="rtl"><b>العناوين</b> · Rakkas</p>
 
-<img src="https://readme-typing-svg.demolab.com/?lines=%D8%AF%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D9%83%D8%AA%D8%A7%D8%A8%D8%A9%20%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9&font=Rakkas&center=true&width=520&height=90&size=44&repeat=false&color=C9A24D" alt="دليل الكتابة العربية">
+<img src="../assets/heritage/font-rakkas.svg" alt="دليل الكتابة العربية">
 
 </div>
 
 </div>
+
+```sh
+python code/typing_svg.py --line "دليل الكتابة العربية" --font Amiri --size 44 --color "#C9A24D" --width 520 --height 90 --once --out docs/assets/title.svg
+```
 
 ```html
-<img src="https://readme-typing-svg.demolab.com/?lines=نص-مرمّز&font=Amiri&center=true&width=520&height=90&size=44&repeat=false&color=C9A24D" alt="النص كاملًا">
+<img src="docs/assets/title.svg" alt="دليل الكتابة العربية">
 ```
 
 <div dir="rtl" align="justify">
 
-غيّر &lrm;`font=`&lrm; إلى اسم الخط في Google Fonts، والمسافة فيه &lrm;`+`&lrm;.
+غيّر &lrm;`--font`&lrm; إلى اسم الخط في Google Fonts، وضعه بين علامتي تنصيص إن كان فيه مسافة.
 
 ## ۞ زخرفة هندسية (صورة)
 
@@ -297,6 +301,50 @@
 ```
 
 <div dir="rtl" align="justify">
+
+## ۞ زخارف المخطوطات (صور)
+
+✔ زخارف مما في المخطوطات القديمة، تصنعها الأداة ornaments.py صورًا في مستودعك، بخلفية شفافة ولونين: الذهبي واللازوردي. (الاختبار S14)
+
+- **الشمسة:** وردة مستديرة كالشمس، تُرسم في أول المصحف والكتاب.
+- **العنوان:** لوحة مزخرفة في رأس الصفحة، فيها اسم الكتاب بخط النسخ.
+- **الضفيرة:** شريطان متداخلان، يحيطان بالصفحة أو يفصلان بين الأبواب.
+- **الرقش:** غصن ملتف بأوراقه، يفصل بين الأقسام.
+- **القناطر:** صف من العقود المدببة على أعمدة.
+
+<div align="center">
+
+<img src="../assets/ornaments/shamsa.svg" width="110" alt="شمسة">
+
+<img src="../assets/ornaments/cartouche.svg" alt="دليل الكتابة العربية">
+
+<img src="../assets/ornaments/interlace.svg" alt="">
+
+<img src="../assets/ornaments/arabesque.svg" alt="">
+
+<img src="../assets/ornaments/arcade.svg" alt="">
+
+</div>
+
+</div>
+
+```sh
+python code/ornaments.py --out-dir docs/assets/ornaments --title "دليل الكتابة العربية"
+```
+
+```html
+<div align="center">
+
+<img src="docs/assets/ornaments/cartouche.svg" alt="دليل الكتابة العربية">
+
+<img src="docs/assets/ornaments/interlace.svg" alt="">
+
+</div>
+```
+
+<div dir="rtl" align="justify">
+
+غيّر &lrm;`--title`&lrm; إلى عنوانك، و&lrm;`--gold`&lrm; و&lrm;`--blue`&lrm; إلى لونين آخرين إن شئت.
 
 ## ۞ الخاتمة
 
