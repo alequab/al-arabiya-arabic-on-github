@@ -52,7 +52,7 @@ LRM_END = re.compile("(&lrm;|\\u200e)\\s*$", re.I)
 LRI_END = re.compile("(&#x2066;|\\u2066)\\s*$", re.I)
 LRM_START = re.compile("^\\s*(&lrm;|\\u200e)", re.I)
 PDI_START = re.compile("^\\s*(&#x2069;|\\u2069)", re.I)
-LATIN_ACROSS = re.compile("[\\u0621-\\u064a]\\s+[A-Za-z][\\w.]*(?:\\s+[A-Za-z][\\w.]*)*\\s*[·—–/]\\s*[A-Za-z]")
+LATIN_ACROSS = re.compile("[\\u0621-\\u064a]\\s+[A-Za-z][\\w.]*(?:\\s+[A-Za-z][\\w.]*)*(?:\\s*[·—–]\\s*|\\s+/\\s+)[A-Za-z]")   # IEC/ISO, I/O: no spaces, one Latin run
 # Number groups split by spaces or a spaced / long dash: 050 123 4567, 10:30 - 11:00. A hyphen with no spaces
 # (050-123-4567, 2026-11-27) keeps the number whole, so it is not matched.
 _NUM = r"\d+(?:[-./,:]\d+)*"

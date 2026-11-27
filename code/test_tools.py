@@ -274,6 +274,13 @@ class TextTool(unittest.TestCase):
         self.assertEqual(t, "\u2067README: الجدول\u2069")
 
 
+class LatinSlash(unittest.TestCase):
+    def test_slash_without_spaces_is_one_run(self):
+        self.assertEqual([r for _, r in rules("نمط IEC/ISO في الرسم.")], [])
+        self.assertEqual([r for _, r in rules("مشاهد Factory I/O هنا.")], [])
+        self.assertIn("latin-across-separator", [r for _, r in rules('<h4 dir="rtl">دليل GitHub / Guide</h4>')])
+
+
 class Muted(unittest.TestCase):
     def test_off_on(self):
         md = "\n".join(["GitHub هو الموقع.", "<!-- check-arabic: off -->", "GitHub هو الموقع.",
