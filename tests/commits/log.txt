@@ -7,3 +7,4 @@ c6
 c8
 c9
 c10 whole-line isolate
+c11 whole-line isolate, Latin word
