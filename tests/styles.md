@@ -161,7 +161,7 @@ Collapsible table of contents in Arabic. `<details>` with Arabic heading links.
 <details>
 <summary><b>المحتويات</b></summary>
 
-- [الشعار](#s1)
+- [اللافتة](#s1)
 - [النص المتحرك](#s3)
 - [الشارات](#s4)
 
