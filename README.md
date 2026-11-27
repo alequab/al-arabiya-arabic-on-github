@@ -27,7 +27,7 @@
 3. ضع القسم العربي داخل &lrm;`<div dir="rtl">`&lrm;، فتطبيق الهاتف والجداول وملاحظات الإصدار تحتاجه، واترك سطرًا فارغًا بعد فتحه وقبل إغلاقه.
 4. أغلق هذا العنصر قبل كتل الشيفرة وقبل تنبيهات GitHub، ثم افتحه بعدها.
 5. تجنّب في العربية: الاقتباس، والحواشي الأصلية، والمائل، وقوائم المهام.
-6. وصف المستودع والعناوين حقول من اليسار إلى اليمين، فضعها بين علامتي RLI وPDI، وفي العنوان ذي اللغتين الجزء العربي وحده (الأداة &lrm;`code/arabic_text.py`&lrm; تفعل ذلك).
+6. وصف المستودع والعناوين حقول من اليسار إلى اليمين، فضعها بين علامتي RLI وPDI، والعنوان ذو اللغتين يوضع كله بينهما كالوصف، فيظهر العربي على اليمين (الأداة &lrm;`code/arabic_text.py`&lrm; تفعل ذلك).
 7. أسماء المستودعات والمواضيع بالإنجليزية، ووسم الإصدار (tag) العربي كلمة عربية مع أرقام غربية.
 8. اكتب النص كاملًا في الوصف البديل لكل صورة، وانظر إلى صفحتك في تطبيق الهاتف أيضًا.
 
@@ -90,7 +90,7 @@ notes, the repo About text, titles and names. Every rule was checked on github.c
    opening tag and before the closing one.
 4. Close that div before code blocks and GitHub alerts, and reopen it after.
 5. Avoid in Arabic: `>` quotes, `[^1]` footnotes, italic, task lists.
-6. The About text and titles are left-to-right fields: wrap them in RLI…PDI (a bilingual title: only its Arabic part) (`code/arabic_text.py` does it).
+6. The About text and titles are left-to-right fields: wrap them in RLI…PDI (a bilingual title whole, like the About text, so the Arabic shows on the right) (`code/arabic_text.py` does it).
 7. Repo names and topics in English; an Arabic tag is an Arabic word with Western digits.
 8. Put the full text in every picture's alt text, and look at your page in the phone app too.
 

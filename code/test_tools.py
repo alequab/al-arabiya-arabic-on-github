@@ -222,12 +222,12 @@ class TextTool(unittest.TestCase):
         self.assertEqual(arabic_text.commit(msg),
                          "\u2067README: تحديث القسم العربي.\u2069\n\nEnglish line.\n\u2067سطر فيه GitHub في وسطه.\u2069\n")
         self.assertEqual(arabic_text.commit("إضافة الاختبار على GitHub · Add test\n"),
-                         "\u2067إضافة الاختبار على GitHub\u2069 · Add test\n")
+                         "\u2067إضافة الاختبار على GitHub\u200f · Add test\u200e\u2069\n")
 
     def test_text_review_fixes(self):
         self.assertEqual(arabic_text.title("Fix README."), "Fix README.")            # English titles left alone
         self.assertEqual(arabic_text.title("الإصدار 1.2.0 · Release 1.2.0"),
-                         "\u2067الإصدار 1.2.0\u2069 · Release 1.2.0")
+                         "\u2067الإصدار 1.2.0\u200f · Release 1.2.0\u200e\u2069")
         msg = "تحديث الدليل.\n\n  سطر مزاح فيه GitHub.\n\nSigned-off-by: عبد الله <a@b.c>\n"
         out = arabic_text.commit(msg).split("\n")
         self.assertTrue(out[2].startswith("  \u2067"))                                # indentation kept
@@ -267,7 +267,7 @@ class TextTool(unittest.TestCase):
         self.assertEqual(arabic_text.commit(msg).split("\n")[4], "Signed-off-by: عبد الله <a@b.c>")
         # an Arabic part with its own separator: still only the Arabic part is wrapped
         self.assertEqual(arabic_text.title("الإصدار 1.2 · إصلاحات · Release 1.2 · Fixes"),
-                         "\u2067الإصدار 1.2 · إصلاحات\u2069 · Release 1.2 · Fixes")
+                         "\u2067الإصدار 1.2 · إصلاحات\u200f · Release 1.2 · Fixes\u200e\u2069")
 
     def test_title_no_double_marks(self):
         t = arabic_text.title("\u2067README: الجدول\u2069")

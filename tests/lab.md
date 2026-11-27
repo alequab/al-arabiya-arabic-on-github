@@ -9,7 +9,7 @@ simulation. Tests about looks (fonts, styles) are judged by eye in the
 guide. Open this page on github.com and in the GitHub phone app and compare (the app keeps an old copy for a
 while: pull down to refresh).
 
-[T1](#t1) · [T2](#t2) · [T3](#t3) · [T4](#t4) · [T5](#t5) · [T6](#t6) · [T7](#t7) · [T8](#t8) · [T9](#t9) · [T10](#t10) · [T11](#t11) · [T12](#t12) · [T13](#t13) · [T14](#t14) · [T15](#t15) · [T16](#t16) · [T17](#t17) · [T18](#t18) · [T19](#t19) · [T20](#t20) · [T21](#t21) · [T22](#t22) · [T23](#t23) · [T24](#t24) · [T25](#t25) · [T26](#t26) · [T27](#t27) · [T28](#t28) · [T29](#t29) · [T30](#t30) · [T31](#t31) · [T32](#t32) · [T33](#t33) · [T34](#t34) · [T35](#t35) · [T36](#t36) · [T37](#t37) · [T38](#t38) · [T39](#t39) · [T40](#t40) · [T41](#t41) · [T42](#t42) · [T43](#t43) · [T44](#t44) · [T45](#t45)
+[T1](#t1) · [T2](#t2) · [T3](#t3) · [T4](#t4) · [T5](#t5) · [T6](#t6) · [T7](#t7) · [T8](#t8) · [T9](#t9) · [T10](#t10) · [T11](#t11) · [T12](#t12) · [T13](#t13) · [T14](#t14) · [T15](#t15) · [T16](#t16) · [T17](#t17) · [T18](#t18) · [T19](#t19) · [T20](#t20) · [T21](#t21) · [T22](#t22) · [T23](#t23) · [T24](#t24) · [T25](#t25) · [T26](#t26) · [T27](#t27) · [T28](#t28) · [T29](#t29) · [T30](#t30) · [T31](#t31) · [T32](#t32) · [T33](#t33) · [T34](#t34) · [T35](#t35) · [T36](#t36) · [T37](#t37) · [T38](#t38) · [T39](#t39) · [T40](#t40) · [T41](#t41) · [T42](#t42) · [T43](#t43) · [T44](#t44) · [T45](#t45) · [T46](#t46)
 
 ---
 
@@ -810,9 +810,10 @@ the start of a line does not change it. Measured on github.com (2026-11-27):
 | `إضافة صفحة اختبار الالتزامات` (Arabic only) | ✔ reads right |
 | `README: تحديث القسم العربي.` | ✘ the full stop lands beside «تحديث», at the start of the Arabic |
 | the same in RLI…PDI | ✔ `README:` on the right, the full stop at the end |
-| `إضافة الاختبار · Add test` | ✔ Arabic, then the English |
+| `إضافة الاختبار · Add test` | ⚠ right order, but the Arabic is on the left, read last |
 | `إضافة الاختبار على GitHub‏ · Add test on GitHub` (RLM after GitHub) | ✘ «GitHub» stays to the right of «إضافة», cut off from its sentence |
-| the Arabic part in RLI…PDI, then ` · Add test on GitHub` | ✔ |
+| the Arabic part in RLI…PDI, then ` · Add test on GitHub` | ⚠ right order, but the Arabic is on the left |
+| the whole title in RLI…PDI: RLI + Arabic + RLM + ` · ` + English + LRM + PDI (two commits) | ✔ the Arabic on the right, read first, «GitHub» inside it; the English on its left |
 | body lines with Latin words (and one starting with RLM) | ✘ word order broken |
 | the same body lines, each in RLI…PDI | ✔ right order, still left-aligned |
 
@@ -937,3 +938,18 @@ C ↓ small text
 An issue form (`.github/ISSUE_TEMPLATE/rendering.yml`) with labels written «Arabic · English». ✔ The labels,
 descriptions and dropdown options read right: Arabic first, its «؟» at the end of the Arabic, then the English.
 ✔ A Markdown block with `<p dir="rtl">` in the form sits on the right.
+
+---
+
+### T46
+
+Bilingual issue titles in the issue list and on the issue page (2026-11-27). Issue #10: the whole title in RLI…PDI
+(RLI + Arabic + RLM + ` · ` + English + LRM + PDI). Issue #11: only the Arabic part in RLI…PDI.
+
+| Title | Issue list | Issue page heading |
+|---|---|---|
+| #10, whole title wrapped | ✔ the Arabic on the right, read first; the English on its left | ✔ right to left; a long English part wraps onto a second line |
+| #11, Arabic part only | ⚠ the Arabic on the left, the English on the right | ✔ the same as #10 |
+
+Fix: `python code/arabic_text.py title "..." --out title.txt`. Commit lists behave the same (T37). Phone app not
+checked.

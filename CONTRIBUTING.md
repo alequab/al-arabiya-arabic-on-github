@@ -5,7 +5,7 @@
 شكرًا لاهتمامك. هذا الدليل يقوم على الاختبار، فكل قاعدة فيه جُرّبت على موقع GitHub، ونتائج تطبيق الهاتف من لقطات حقيقية أو من أداة تحاكيه.
 
 - **وجدت عرضًا خاطئًا؟** افتح بلاغًا بالنموذج «عرض خاطئ»، واذكر الصفحة والمكان (الموقع أو التطبيق)، وأرفق صورة إن استطعت.
-- **عندك طريقة أفضل؟** اكتب الحالة اختبارًا جديدًا في آخر &lrm;`tests/lab.md`&lrm; برقم جديد (مثل T46)، فيه الطريقة المعتادة والحل، ثم اربط القاعدة به في الدليلين.
+- **عندك طريقة أفضل؟** اكتب الحالة اختبارًا جديدًا في آخر &lrm;`tests/lab.md`&lrm; برقم جديد (مثل T47)، فيه الطريقة المعتادة والحل، ثم اربط القاعدة به في الدليلين.
 - **غيّرت قاعدة؟** غيّرها في الدليل العربي والإنجليزي معًا، وفي &lrm;`AGENTS.md`&lrm;، حتى لا تختلف النسخ.
 - **قبل الإرسال:** شغّل الفحص والاختبارات، ثم افتح صفحتك على GitHub وشغّل &lrm;`page_audit.js`&lrm; كما في القسم 10 من الدليل.
 
@@ -33,7 +33,7 @@ come from real screenshots or from a tool that copies the app.
 
 - **Found something that renders wrong?** Open an issue with the "Wrong rendering" form: the page, where you saw it
   (website or app), and a screenshot if you can.
-- **Know a better way?** Add it as a new test at the end of `tests/lab.md` with the next number (T46, ...), showing the
+- **Know a better way?** Add it as a new test at the end of `tests/lab.md` with the next number (T47, ...), showing the
   usual way and the fix, then link the rule to it in both guides.
 - **Changed a rule?** Change it in the Arabic and English guides and in `AGENTS.md` together, so they never disagree.
 - **Before you send:** run the checker and the tests, then open your page on GitHub and run `page_audit.js` as in

@@ -7,11 +7,12 @@ About text (tested on github.com at widths of 272-420 px and in the GitHub Andro
   is too long to squeeze in beside the Arabic, so the Arabic gets its own line; LRM keeps the
   English full stop at its end; RLM keeps the separator (and a Latin word ending the Arabic, like GitHub)
   with the Arabic. In one-line lists the Arabic sits to the right of the English.
-Titles: RLI + title + PDI; in a bilingual "Arabic · English" title only the Arabic part. English-only titles
+Titles: RLI + title + PDI. A bilingual "Arabic · English" title is wrapped whole, like the About text:
+  RLI + Arabic + RLM + ' · ' + English + LRM + PDI, so lists show the Arabic on the right, read first (tests T37,
+  T46). English-only titles are left alone.
+Commit messages: every line with Arabic in it is marked the same way (GitHub shows commit titles and bodies
+  left to right, in a code font, with no automatic direction). Trailers (Signed-off-by: ...) in the last paragraph
   are left alone.
-Commit messages: every line with Arabic in it becomes RLI + line + PDI (GitHub shows commit titles and bodies
-  left to right, in a code font, with no automatic direction). A bilingual "Arabic · English" line: only the
-  Arabic part. Trailers (Signed-off-by: ...) in the last paragraph are left alone.
   RLI U+2067, PDI U+2069, LRM U+200E, no-break space U+00A0.
 
 Usage:
@@ -81,7 +82,7 @@ def about(arabic: str, english: str) -> tuple[str, list[str]]:
 
 
 def _mark_line(line: str) -> str:
-    """One line of a title or commit message: an Arabic part in RLI...PDI, English left as it is."""
+    """One line of a title or commit message. "Arabic · English" is wrapped whole, as one right-to-left isolate."""
     if not ARABIC_LETTER.search(line):
         return line
     indent = line[:len(line) - len(line.lstrip())]
@@ -89,8 +90,9 @@ def _mark_line(line: str) -> str:
     for i in range(1, len(parts)):
         en = SEP.join(parts[i:])
         if not ARABIC_LETTER.search(en):
-            # "Arabic · English": only the Arabic part, which may have its own separators
-            return indent + isolate(SEP.join(parts[:i])) + SEP + en
+            # "Arabic · English" (the Arabic part may have its own separators): RLM keeps the separator, and a
+            # Latin word ending the Arabic, with the Arabic; LRM keeps the English full stop at its end
+            return indent + RLI + clean(SEP.join(parts[:i])) + RLM + SEP + en + LRM + PDI
     return indent + isolate(line)
 
 

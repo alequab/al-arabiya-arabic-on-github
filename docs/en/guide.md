@@ -4,7 +4,7 @@
 
 Every rule here was tested on github.com (November 2026). Phone-app (Android) results come from real screenshots
 where the test says so, otherwise from `code/page_audit.js`, which copies the app. Most rules link to their test
-(`T1`…`T45`) on the [test page](../../tests/lab.md). GitHub can change; if a rule stops working, open an issue.
+(`T1`…`T46`) on the [test page](../../tests/lab.md). GitHub can change; if a rule stops working, open an issue.
 
 ## Contents
 
@@ -247,22 +247,23 @@ gh api -X PATCH repos/OWNER/REPO -F description=@about.txt
 
 Shown left to right. An Arabic title with a Latin word, number or bracket gets scrambled
 (in `README: الجدول لا يظهر من اليمين في الإصدار 2` the `README:` lands at the far left, where an Arabic
-reader finishes). Wrap the title in RLI…PDI; in a bilingual `Arabic · English` title, only the Arabic part:
+reader finishes). Wrap the title in RLI…PDI. Wrap a bilingual `Arabic · English` title whole, like the About text
+(RLI + Arabic + RLM + ` · ` + English + LRM + PDI): issue and commit lists then show the Arabic on the right, read
+first. With only the Arabic part wrapped, the Arabic lands on the left. ([T46](../../tests/lab.md#t46))
 
 ```powershell
 python code/arabic_text.py title "README: الجدول لا يظهر من اليمين في الإصدار 2" --out title.txt
 gh api repos/OWNER/REPO/issues -F title=@title.txt -F body=@body.md
 ```
 
-A release title made only of Arabic, numbers and `·` English (`الإصدار 1.2.0 · Release 1.2.0`) reads right without
-marks. Labels and milestones take Arabic.
+Labels and milestones take Arabic.
 
 ### Commit messages
 
 GitHub shows commit titles and bodies left to right, left-aligned, as plain text (the body in a code font): no
 Markdown, no automatic direction, and `&rlm;` or an RLM at the start of a line does nothing. An Arabic-only line reads
-right. A line with a Latin word, a number or a full stop gets scrambled: wrap each such line in RLI…PDI, and in a
-bilingual title only the Arabic part (`⁧إضافة الاختبار على GitHub⁩ · Add test on GitHub`).
+right. A line with a Latin word, a number or a full stop gets scrambled: wrap each such line in RLI…PDI, and a
+bilingual title whole, as above, so the commit list shows the Arabic on the right.
 ([T37](../../tests/lab.md#t37))
 
 ```powershell
@@ -276,8 +277,8 @@ font. ([T38](../../tests/lab.md#t38))
 ### Discussions, polls and Gists
 
 Discussion bodies, comments, answers and Gist Markdown files work like issue bodies. Discussion titles, category
-names, poll questions and options, and Gist descriptions are left-to-right fields: wrap the Arabic part in RLI…PDI
-when it has a Latin word, number or bracket. A Gist is named after its first file alphabetically, and Arabic names
+names, poll questions and options, and Gist descriptions are left-to-right fields: wrap Arabic with a Latin word,
+number or bracket in RLI…PDI, and a bilingual line whole, as for titles. A Gist is named after its first file alphabetically, and Arabic names
 sort last. ([T41](../../tests/lab.md#t41), [T42](../../tests/lab.md#t42))
 
 ### Search

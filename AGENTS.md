@@ -3,7 +3,7 @@
 Use these rules whenever you write Arabic (or any right-to-left text) for GitHub: README and other Markdown files,
 issues, pull requests, comments, release notes, the repo About text, titles, labels and names. Each rule was tested on
 github.com (2026-11); phone-app (Android) results come from real screenshots where the lab says so, otherwise
-from `code/page_audit.js`, which copies the app. Evidence: `tests/lab.md` (tests T1–T45). Full guide:
+from `code/page_audit.js`, which copies the app. Evidence: `tests/lab.md` (tests T1–T46). Full guide:
 `docs/en/guide.md` (English), `docs/ar/guide.md` (Arabic).
 
 ## Characters
@@ -79,14 +79,15 @@ the Latin word lands on the wrong side (test S13). Details: `docs/en/styles.md`.
     Arabic part about 35 letters or less (one line). No new lines (API refuses), no U+2028, no flag emoji.
     `code/arabic_text.py about` builds it.
 15. Issue, PR, release and label titles that mix Arabic with Latin words, numbers or brackets: wrap the whole title
-    in RLI … PDI; in a bilingual `Arabic · English` title wrap only the Arabic part. `code/arabic_text.py title`
-    does both.
+    in RLI … PDI. A bilingual `Arabic · English` title is wrapped whole, like the About text: RLI + Arabic + RLM +
+    ` · ` + English + LRM + PDI, so lists show the Arabic on the right, read first (T37, T46).
+    `code/arabic_text.py title` does both.
     - **15a.** Commit messages: plain left-to-right text, no Markdown, no auto direction, RLM does nothing. Wrap every line that
-      has Arabic plus a Latin word, number or full stop in RLI…PDI; in a bilingual title only the Arabic part
-      (`code/arabic_text.py commit`). CSV files show as left-to-right tables; notebook Markdown cells ignore
+      has Arabic plus a Latin word, number or full stop in RLI…PDI; a bilingual title is wrapped whole, as in rule
+      15 (`code/arabic_text.py commit`). CSV files show as left-to-right tables; notebook Markdown cells ignore
       `dir="rtl"` (tests T37–T39).
     - **15b.** Discussion titles, category names, poll questions and options, Gist descriptions: left-to-right fields, wrap
-      the Arabic part in RLI…PDI (T41, T42). Search matches letters exactly: no tatweel or vowel marks in titles or
+      the Arabic in RLI…PDI, a bilingual line whole as in rule 15 (T41, T42). Search matches letters exactly: no tatweel or vowel marks in titles or
       words people will search for (T40).
 16. Release notes: Arabic part inside `<div dir="rtl">` (release notes get no automatic direction), then `---`, then
     the English part.

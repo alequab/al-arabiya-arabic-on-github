@@ -16,7 +16,7 @@
 
 ## Evidence
 
-- [Test page](tests/lab.md): tests T1–T45, each showing the usual way and the fix.
+- [Test page](tests/lab.md): tests T1–T46, each showing the usual way and the fix.
 - [Styles test page](tests/styles.md): tests S1–S15, popular README styles and ornaments with Arabic.
 
 ## Tools
