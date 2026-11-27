@@ -7,9 +7,9 @@
 //   auditArabic("phone")   the page as the GitHub Android app draws it (changes the page; reload to undo)
 // Run "web" first. Browser automation tools can paste it the same way.
 //
-// The phone mode copies what the app was seen doing (2026-11-27, tests T29-T35 of arabic-readme-lab, matched against
-// real phone screenshots of T29-T34): no dir="auto" on paragraphs (only dir="rtl" set by you counts), no <picture>, no
-// #gh-dark-mode-only / #gh-light-mode-only pictures, no math, no Mermaid.
+// The phone mode copies what the app was seen doing (2026-11-27, tests T29-T35 of al-arabiya-arabic-on-github,
+// matched against real phone screenshots of T29-T34): no dir="auto" on paragraphs (only dir="rtl" set by you counts),
+// no <picture>, no #gh-dark-mode-only / #gh-light-mode-only pictures, no math, no Mermaid.
 //
 // A block counts as Arabic when its own text (not inline code) has more Arabic than Latin letters. Findings:
 // Arabic running left to right, Arabic lists with bullets on the left, code running right to left, pictures that

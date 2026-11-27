@@ -28,7 +28,7 @@ in the examples below (test S13).
 | Picture beside the text | ✔ An image with `align="left"` inside the RTL div; the Arabic wraps around it from the right. | S10 |
 | Arabic and English side by side | ✔ A two-column table, the Arabic cell with `dir="rtl"` on the right. | S10 |
 | Collapsible contents | ✔ `<details>` inside the RTL div, with Arabic heading links. | S11 |
-| Centered nav bar | ✔ Arabic links with emoji, in a centered block. | S12 |
+| Centered nav bar | ✔ Arabic links with emoji, in a centered block with `dir="rtl"` (without it the phone app puts the links left to right). | S12 |
 | github-profile-trophy | ✘ the public service is down (HTTP 402) | — |
 
 ## Copy and paste

@@ -74,7 +74,7 @@
 
 <div align="center">
 
-<img src="https://badgen.net/badge/%D8%A7%D9%84%D8%AA%D8%B1%D8%AE%D9%8A%D8%B5/MIT/green" alt="الترخيص: MIT"> <img src="https://komarev.com/ghpvc/?username=arabic-readme-lab&label=%D8%B9%D8%AF%D8%AF%20%D8%A7%D9%84%D8%B2%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA&color=2ea44f" alt="عدد الزيارات">
+<img src="https://badgen.net/badge/%D8%A7%D9%84%D8%AA%D8%B1%D8%AE%D9%8A%D8%B5/MIT/green" alt="الترخيص: MIT"> <img src="https://komarev.com/ghpvc/?username=al-arabiya-arabic-on-github&label=%D8%B9%D8%AF%D8%AF%20%D8%A7%D9%84%D8%B2%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA&color=2ea44f" alt="عدد الزيارات">
 
 </div>
 
@@ -226,7 +226,7 @@
 
 ### ✔ شريط تنقل في الوسط
 
-روابط عربية قبلها رموز تعبيرية، داخل وسم المحاذاة للوسط. (الاختبار S12)
+روابط عربية قبلها رموز تعبيرية، داخل وسم المحاذاة للوسط مع &lrm;`dir="rtl"`&lrm;، وبغيره يعرض تطبيق الهاتف الروابط من اليسار. (الاختبار S12)
 
 ## ما لا يعمل
 

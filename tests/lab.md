@@ -800,7 +800,7 @@ C ↓
 
 ### T37
 
-Commit messages. The evidence is on the branch `lab-commits` ([its commits](https://github.com/alequab/arabic-readme-lab/commits/lab-commits))
+Commit messages. The evidence is on the branch `lab-commits` ([its commits](https://github.com/alequab/al-arabiya-arabic-on-github/commits/lab-commits))
 and in the draft pull request #4, kept open as a test (not to be merged). GitHub shows commit titles and bodies left
 to right, left-aligned, the body in a code font, as plain text: no Markdown, no automatic direction, and a mark at
 the start of a line does not change it. Measured on github.com (2026-11-27):

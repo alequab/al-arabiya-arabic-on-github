@@ -91,7 +91,7 @@ Quote card with an Arabic quote. `quote` and `author`.
 
 Views counter with an Arabic label. komarev `label`.
 
-<img src="https://komarev.com/ghpvc/?username=arabic-readme-lab&label=%D8%B9%D8%AF%D8%AF%20%D8%A7%D9%84%D8%B2%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA&color=2ea44f" alt="عدد الزيارات">
+<img src="https://komarev.com/ghpvc/?username=al-arabiya-arabic-on-github&label=%D8%B9%D8%AF%D8%AF%20%D8%A7%D9%84%D8%B2%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA&color=2ea44f" alt="عدد الزيارات">
 
 ---
 
@@ -161,7 +161,7 @@ Collapsible table of contents in Arabic. `<details>` with Arabic heading links.
 
 Centered nav bar with icons. Emoji before Arabic links, inside a centered block.
 
-<div align="center">
+<div align="center" dir="rtl">
 
 📘 [الدليل](../docs/ar/guide.md) · 🧪 [الاختبارات](lab.md) · 🤖 [للذكاء الاصطناعي](../AGENTS.md)
 
