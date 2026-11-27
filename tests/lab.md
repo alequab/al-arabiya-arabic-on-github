@@ -847,8 +847,10 @@ Files other than Markdown, on the branch `lab-commits` (`tests/files/`).
 Search (2026-11-27).
 - ✔ Issue search finds an Arabic word in a title wrapped in RLI…PDI (`يحفظ`); pull request search finds one in #4
   (`الالتزامات`).
-- ✔ Code search finds Arabic words (tested on other indexed repos: `بسم`, `الله`, `الرحمن`). This repo was
-  still being indexed while private, so code search here was not checked then.
+- ✔ Code search finds Arabic words, here too once the repo was public and indexed (about 2 hours after it went
+  public): `الشمسة` finds `docs/ar/heritage.md`; `مجرَّب` (with shadda) finds `README.md` and `docs/ar/styles.md`,
+  while the plain `مجرب` finds nothing. `path:دليل-الاستخدام` and `path:مجلد-عربي` find the Arabic-named file and
+  folder.
 - ✘ Search matches letters exactly. In a comment on issue #3 with «المـــفتاح» (tatweel) and «المِصْباح» (vowel
   marks), searching `المفتاح` or `المصباح` finds nothing; only the same spelling finds it. Code search the same:
   `الرّحمن` (with shadda) finds nothing where `الرحمن` is written. So keep tatweel and vowel marks out of titles and
