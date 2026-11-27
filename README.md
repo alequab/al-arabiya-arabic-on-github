@@ -79,7 +79,7 @@ gh api -X PATCH repos/OWNER/REPO -F description=@about.txt
 ---
 
 A tested guide to writing Arabic (right-to-left) text on GitHub: README and docs, issues, pull requests, release
-notes, the repo About text, titles and names. Every rule was checked on github.com, and almost every one has a live test on the [test page](tests/lab.md). Phone-app
+notes, the repo About text, titles and names. Every rule was checked on github.com, and most have a live test on the [test page](tests/lab.md). Phone-app
 (Android) results come from real screenshots where marked, otherwise from a tool that copies the app.
 
 ### Summary

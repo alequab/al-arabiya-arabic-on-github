@@ -59,6 +59,7 @@ from `code/page_audit.js`, which copies the app. Evidence: `tests/lab.md` (tests
     - **12c.** Justified Arabic paragraphs (both edges straight, like Word's Justify): `<div dir="rtl" align="justify">`
       (test T36). The browser widens spaces (no kashida); best for long paragraphs. Phone app not verified.
 13. A chosen Arabic font or an Arabic alert title is only possible as a picture (rule 12), text in `alt`.
+    `code/typing_svg.py --font <Google font>` makes such a picture, written from the right (rule 13a).
 
 ## Picture services (banners, badges, cards)
 
@@ -87,7 +88,7 @@ the Latin word lands on the wrong side (test S13). Details: `docs/en/styles.md`.
       15 (`code/arabic_text.py commit`). CSV files show as left-to-right tables; notebook Markdown cells ignore
       `dir="rtl"` (tests T37–T39).
     - **15b.** Discussion titles, category names, poll questions and options, Gist descriptions: left-to-right fields, wrap
-      the Arabic in RLI…PDI, a bilingual line whole as in rule 15 (T41, T42). Search matches letters exactly: no tatweel or vowel marks in titles or
+      the Arabic in RLI…PDI, a bilingual line whole as in rule 15 (T41, T42, T46). Search matches letters exactly: no tatweel or vowel marks in titles or
       words people will search for (T40).
 16. Release notes: Arabic part inside `<div dir="rtl">` (release notes get no automatic direction), then `---`, then
     the English part.

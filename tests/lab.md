@@ -864,7 +864,7 @@ Discussions (enabled for this test; #5–#9).
 - ✔ Bodies, comments, threaded replies and the marked answer are Markdown with automatic direction, like issues: the
   RTL div works, a line starting with «GitHub» needs `&rlm;`, a table outside the div is left to right.
 - Titles (list and page heading): ✘ `README: كيف أجعل الجدول من اليمين؟` (#6) puts `README` and `#6` in the wrong
-  places; ✔ the same in RLI…PDI (#7).
+  places; ✔ the same in RLI…PDI (#7). Bilingual titles (#12, #13): see T46.
 - Category names: ✘ `أسئلة عن GitHub` («GitHub» lands on the wrong side); ✔ `⁧أخبار GitHub⁩`. The RLI-wrapped
   category also moved to the top of the category list.
 - Polls (#8, #9): question and options are left to right, radio buttons on the left. ✘ Options with a Latin word or
@@ -878,8 +878,8 @@ Discussions (enabled for this test; #5–#9).
 A secret Gist with three files (`دليل-قصير.md`, `notes.txt`, `sample.py`) and a comment.
 - ✔ Markdown files and comments behave like repo files: automatic direction, the RTL div, tables, alerts with
   `<p dir="rtl">`.
-- ✘ Description `اختبار العربية في Gist · Arabic Gist test`: «Gist» joins the English. ✔ The Arabic part in
-  RLI…PDI.
+- ✘ Description `اختبار العربية في Gist · Arabic Gist test`: «Gist» joins the English. ⚠ The Arabic part in
+  RLI…PDI: right order, but the Arabic is on the left in the Gist list. ✔ The whole description wrapped (T46).
 - ⚠ The Gist is named after its first file in alphabetical order, and Arabic file names sort after Latin ones: an
   Arabic-named file only names the Gist when all its files have Arabic names.
 
@@ -943,13 +943,18 @@ descriptions and dropdown options read right: Arabic first, its «؟» at the en
 
 ### T46
 
-Bilingual issue titles in the issue list and on the issue page (2026-11-27). Issue #10: the whole title in RLI…PDI
+Bilingual titles in left-to-right fields: issue titles in the issue list and on the issue page, discussion titles,
+Gist descriptions (2026-11-27). Issue #10: the whole title in RLI…PDI
 (RLI + Arabic + RLM + ` · ` + English + LRM + PDI). Issue #11: only the Arabic part in RLI…PDI.
 
 | Title | Issue list | Issue page heading |
 |---|---|---|
 | #10, whole title wrapped | ✔ the Arabic on the right, read first; the English on its left | ✔ right to left; a long English part wraps onto a second line |
 | #11, Arabic part only | ⚠ the Arabic on the left, the English on the right | ✔ the same as #10 |
+| Discussion #12, whole title wrapped | ✔ the Arabic on the right, read first | — |
+| Discussion #13, Arabic part only | ⚠ the Arabic on the left | — |
+| Secret Gist description, whole (`اختبار العربية في Gist · Arabic Gist test`) | ✔ the Arabic on the right (Gist list) | — |
+| Secret Gist description, Arabic part only | ⚠ the Arabic on the left | — |
 
 Fix: `python code/arabic_text.py title "..." --out title.txt`. Commit lists behave the same (T37). Phone app not
 checked.

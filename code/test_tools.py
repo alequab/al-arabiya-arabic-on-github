@@ -265,7 +265,7 @@ class TextTool(unittest.TestCase):
         # blank lines at the end of the message do not hide the trailers
         msg = "عنوان.\n\nنص.\n\nSigned-off-by: عبد الله <a@b.c>\n\n"
         self.assertEqual(arabic_text.commit(msg).split("\n")[4], "Signed-off-by: عبد الله <a@b.c>")
-        # an Arabic part with its own separator: still only the Arabic part is wrapped
+        # an Arabic part with its own separator: the whole title is wrapped, the separator stays in the Arabic part
         self.assertEqual(arabic_text.title("الإصدار 1.2 · إصلاحات · Release 1.2 · Fixes"),
                          "\u2067الإصدار 1.2 · إصلاحات\u200f · Release 1.2 · Fixes\u200e\u2069")
 

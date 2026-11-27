@@ -15,5 +15,5 @@ jobs:
           python-version: "3.12"
       - name: Tool tests
         run: python code/test_tools.py
-      - name: Check the guide pages (the test pages are broken on purpose and are not checked)
-        run: python code/check_arabic_md.py --no-info README.md AGENTS.md CONTRIBUTING.md docs templates
+      - name: Check the guide pages and the styles test page (tests/lab.md is broken on purpose and is not checked)
+        run: python code/check_arabic_md.py --no-info README.md AGENTS.md CONTRIBUTING.md docs templates tests/styles.md

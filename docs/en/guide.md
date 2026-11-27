@@ -215,7 +215,10 @@ the raw code. `\colorbox` and `\fcolorbox` are refused. ([T24](../../tests/lab.m
 **Fonts**: GitHub uses the reader's system font. A chosen Arabic font is only possible as a picture: one plain
 `<img>` in a colour that reads on dark and light (the phone app can't switch pictures by theme), with the text in the
 alt text. [T26](../../tests/lab.md#t26) shows one heading in eight Windows fonts,
-made by [`code/make-font-samples.ps1`](../../code/make-font-samples.ps1).
+made by [`code/make-font-samples.ps1`](../../code/make-font-samples.ps1). [`code/typing_svg.py`](../../code/typing_svg.py)
+builds a Google font into the picture and writes from the right; badges and cards come from
+[`code/arabic_cards.py`](../../code/arabic_cards.py), manuscript ornaments from [`code/ornaments.py`](../../code/ornaments.py)
+([styles](styles.md), [heritage](heritage.md)).
 
 ## 7. Fields outside Markdown: About, titles, labels, releases
 
@@ -278,7 +281,7 @@ font. ([T38](../../tests/lab.md#t38))
 
 Discussion bodies, comments, answers and Gist Markdown files work like issue bodies. Discussion titles, category
 names, poll questions and options, and Gist descriptions are left-to-right fields: wrap Arabic with a Latin word,
-number or bracket in RLI…PDI, and a bilingual line whole, as for titles. A Gist is named after its first file alphabetically, and Arabic names
+number or bracket in RLI…PDI, and a bilingual line whole, as for titles ([T46](../../tests/lab.md#t46)). A Gist is named after its first file alphabetically, and Arabic names
 sort last. ([T41](../../tests/lab.md#t41), [T42](../../tests/lab.md#t42))
 
 ### Search

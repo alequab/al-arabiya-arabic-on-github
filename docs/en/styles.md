@@ -10,7 +10,7 @@ In the code to copy, replace `YOUR-NAME` with your GitHub user name (the live pi
 
 ✔ works · ⚠ works with a flaw · ✘ does not work
 
-Most of these services draw left to right, so this guide has two tools that make the picture in your repo, right to left: `code/typing_svg.py` (typing text) and `code/arabic_cards.py` (badge, stats card, quote card). Copy the two files into your repo; they need only Python 3.
+Most of these services draw left to right, so this guide has two tools that make the picture in your repo, right to left: `code/typing_svg.py` (typing text) and `code/arabic_cards.py` (badge, stats card, quote card). Copy the two files into your repo; they need Python 3.10 or newer and no extra packages.
 
 **Arabic with a Latin word in a picture's text** (`العربية على GitHub`): the picture lays the text out left to
 right, so the Latin word lands on the wrong side. Wrap the text in RLI…PDI (`%E2%81%A7` … `%E2%81%A9` in the URL), as
@@ -156,3 +156,9 @@ python code/arabic_cards.py quote --text "من جدّ وجد، ومن زرع ح�
 
 </div>
 ```
+
+## Does not work
+
+- shields.io badges with Arabic text: the letters are pulled apart and reversed.
+- github-profile-trophy: the public service is down (HTTP 402).
+- Named fonts in capsule-render pictures: shown only if the reader has that font.
