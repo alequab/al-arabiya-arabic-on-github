@@ -1,0 +1,34 @@
+# Arabic on GitHub
+
+> Tested rules for writing Arabic (right-to-left) text on GitHub: Markdown files, issues, pull requests, release
+> notes, the repo About text, titles, names, commit messages, discussions and Gists. Almost every rule has a live test on
+> the test page.
+
+## Rules
+
+- [AGENTS.md](AGENTS.md): the short, numbered rules for AI tools.
+- [Guide (English)](docs/en/guide.md): full guide with examples and links to each test.
+- [Guide (Arabic)](docs/ar/guide.md): the same guide in Arabic.
+- [README styles (English)](docs/en/styles.md): banners, typing text, badges, cards and layouts tested with Arabic.
+- [README styles (Arabic)](docs/ar/styles.md): the same, showing each style live in Arabic.
+- [Heritage style (English)](docs/en/heritage.md): a README style from the classical Arabic book, with copy-paste parts.
+- [Heritage style (Arabic)](docs/ar/heritage.md): the same, shown live.
+
+## Evidence
+
+- [Test page](tests/lab.md): tests T1–T45, each showing the usual way and the fix.
+- [Styles test page](tests/styles.md): tests S1–S13, popular README styles with Arabic.
+
+## Tools
+
+- [code/check_arabic_md.py](code/check_arabic_md.py): checks Markdown files for the problems in the guide.
+- [code/page_audit.js](code/page_audit.js): browser-console audit of a github.com page, website and phone-app modes.
+- [code/arabic_text.py](code/arabic_text.py): builds the About text, titles and commit messages with the right invisible marks.
+- [code/test_tools.py](code/test_tools.py): tests for the checker and the text tool.
+- [code/make-font-samples.ps1](code/make-font-samples.ps1): draws Arabic text in Windows fonts as pictures.
+
+## Project
+
+- [README.md](README.md): what the repo is, in Arabic and English.
+- [templates/README.ar-en.md](templates/README.ar-en.md): a README template in Arabic and English that follows the rules.
+- [CONTRIBUTING.md](CONTRIBUTING.md): how to report a problem or add a test.

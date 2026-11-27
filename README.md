@@ -1,0 +1,123 @@
+<div align="center">
+
+<h3 dir="rtl">بسم الله الرحمن الرحيم</h3>
+
+<h3 dir="rtl">والصلاة والسلام على نبينا محمد</h3>
+
+<h4 dir="rtl">العربية على GitHub&rlm; · Arabic on GitHub</h4>
+
+<div dir="rtl">
+
+[الخلاصة](#الخلاصة) · [الدليل الكامل](docs/ar/guide.md) · [الأنماط](docs/ar/styles.md) · [الطراز التراثي](docs/ar/heritage.md) · [الأدوات](#الأدوات) · [للذكاء الاصطناعي](#للذكاء-الاصطناعي) · [صفحة الاختبارات](tests/lab.md) · [المساهمة](CONTRIBUTING.md) · [الترخيص](#الترخيص)
+
+</div>
+
+[Summary](#summary) · [Full guide](docs/en/guide.md) · [Styles](docs/en/styles.md) · [Heritage style](docs/en/heritage.md) · [Tools](#tools) · [For AI tools](#for-ai-tools) · [Test page](tests/lab.md) · [Contributing](CONTRIBUTING.md) · [License](#license)
+
+</div>
+
+<div dir="rtl">
+
+دليل مجرَّب لكتابة العربية على GitHub: الملفات التمهيدية والتوثيق والبلاغات وطلبات الدمج وملاحظات الإصدار ووصف المستودع والعناوين والأسماء. كل قاعدة فيه جُرّبت على الموقع، ولأكثرها اختبار حي في [صفحة الاختبارات](tests/lab.md). ونتائج تطبيق الهاتف (أندرويد) من لقطات حقيقية حيث ذُكر ذلك، وإلا فمن أداة تحاكيه.
+
+### الخلاصة
+
+1. السطر العربي يقف على اليمين وحده، لأن GitHub يأخذ اتجاه كل فقرة من أول حرف فيها.
+2. إن بدأ السطر العربي بكلمة لاتينية فابدأه بالعلامة &lrm;`&rlm;`&lrm;.
+3. ضع القسم العربي داخل &lrm;`<div dir="rtl">`&lrm;، فتطبيق الهاتف والجداول وملاحظات الإصدار تحتاجه، واترك سطرًا فارغًا بعد فتحه وقبل إغلاقه.
+4. أغلق هذا العنصر قبل كتل الشيفرة وقبل تنبيهات GitHub، ثم افتحه بعدها.
+5. تجنّب في العربية: الاقتباس، والحواشي الأصلية، والمائل، وقوائم المهام.
+6. وصف المستودع والعناوين حقول من اليسار إلى اليمين، فضعها بين علامتي RLI وPDI، وفي العنوان ذي اللغتين الجزء العربي وحده (الأداة &lrm;`code/arabic_text.py`&lrm; تفعل ذلك).
+7. أسماء المستودعات والمواضيع بالإنجليزية، ووسم الإصدار (tag) العربي كلمة عربية مع أرقام غربية.
+8. اكتب النص كاملًا في الوصف البديل لكل صورة، وانظر إلى صفحتك في تطبيق الهاتف أيضًا.
+
+التفاصيل والأمثلة في [الدليل الكامل](docs/ar/guide.md)، وأشهر أنماط تزيين الملف التمهيدي مجرَّبةً بالعربية في [صفحة الأنماط](docs/ar/styles.md): الشعارات والنص المتحرك والشارات والبطاقات. وفي [الطراز التراثي](docs/ar/heritage.md) طراز مأخوذ من الكتاب العربي: الفواتح والفواصل والأبواب والفوائد والعدّ بأبجد والشعر والحواشي والخطوط.
+
+### الأدوات
+
+- أداة فحص ملفات ماركداون، تُخرج لكل مشكلة سطرها وسببها:
+
+</div>
+
+```powershell
+python code/check_arabic_md.py README.md docs
+```
+
+<div dir="rtl">
+
+- أداة تصنع وصف المستودع والعناوين ورسائل الالتزامات بالعلامات الخفية الصحيحة:
+
+</div>
+
+```powershell
+python code/arabic_text.py about --ar "دليل كتابة العربية" --en "Guide to writing Arabic." --out about.txt
+gh api -X PATCH repos/OWNER/REPO -F description=@about.txt
+```
+
+<div dir="rtl">
+
+- أداة تفحص الصفحة بعد رفعها كما يعرضها الموقع وكما يعرضها تطبيق الهاتف: [`code/page_audit.js`](code/page_audit.js)، تُلصق في وحدة التحكم في المتصفح، ثم يُشغَّل &lrm;`auditArabic("web")`&lrm; ثم &lrm;`auditArabic("phone")`&lrm;.
+- أداة ترسم نصًا عربيًا بخطوط ويندوز صورًا تُقرأ في الوضعين الداكن والفاتح (تختار أنت النص والخطوط واللون): [`code/make-font-samples.ps1`](code/make-font-samples.ps1).
+- قالب جاهز لملف تمهيدي بالعربية والإنجليزية: [`templates/README.ar-en.md`](templates/README.ar-en.md).
+- اختبارات الأداتين: &lrm;`python code/test_tools.py`&lrm;.
+
+الأدوات تحتاج بايثون 3.10 أو أحدث، ولا تحتاج مكتبات إضافية.
+
+الإصدارات ووسومها والفروع والبلاغات والنقاشات في هذا المستودع اختبارات، وهي من أدلة صفحة الاختبارات.
+
+### للذكاء الاصطناعي
+
+الملف [`AGENTS.md`](AGENTS.md) فيه القواعد مرقمة مختصرة لأدوات الذكاء الاصطناعي، والملف [`llms.txt`](llms.txt) فهرس للمستودع. أعطِ أداتك رابط المستودع أو انسخ لها ملف القواعد.
+
+### الترخيص
+
+المستودع كله بترخيص [MIT](LICENSE): انسخه وعدّله واستعمله كما تشاء، مع إبقاء إشعار الترخيص.
+
+</div>
+
+---
+
+A tested guide to writing Arabic (right-to-left) text on GitHub: README and docs, issues, pull requests, release
+notes, the repo About text, titles and names. Every rule was checked on github.com, and almost every one has a live test on the [test page](tests/lab.md). Phone-app
+(Android) results come from real screenshots where marked, otherwise from a tool that copies the app.
+
+### Summary
+
+1. An Arabic line sits on the right by itself: GitHub takes each paragraph's direction from its first letter.
+2. If an Arabic line starts with a Latin word, start it with `&rlm;`.
+3. Put the Arabic section in `<div dir="rtl">` (the phone app, tables and release notes need it), with a blank line after the
+   opening tag and before the closing one.
+4. Close that div before code blocks and GitHub alerts, and reopen it after.
+5. Avoid in Arabic: `>` quotes, `[^1]` footnotes, italic, task lists.
+6. The About text and titles are left-to-right fields: wrap them in RLI…PDI (a bilingual title: only its Arabic part) (`code/arabic_text.py` does it).
+7. Repo names and topics in English; an Arabic tag is an Arabic word with Western digits.
+8. Put the full text in every picture's alt text, and look at your page in the phone app too.
+
+Details and examples: [full guide](docs/en/guide.md). Popular README styles (banners, typing text, badges, cards)
+tested with Arabic: [styles](docs/en/styles.md). A style taken from the classical Arabic book (openings, dividers,
+chapters, notes, abjad numbering, verse, margin notes, fonts): [heritage style](docs/en/heritage.md).
+
+### Tools
+
+- `python code/check_arabic_md.py README.md docs`: checks Markdown files and prints each problem with its line.
+- `python code/arabic_text.py about --ar "..." --en "..." --out about.txt`: builds the About text (and, with
+  `title`, issue / PR / release titles, and with `commit`, commit messages) with the right invisible marks.
+- [`code/make-font-samples.ps1`](code/make-font-samples.ps1): draws Arabic text in Windows fonts as pictures that
+  read on dark and light pages (text, fonts and colours are parameters).
+- [`code/page_audit.js`](code/page_audit.js): paste into the browser console on a github.com page, run
+  `auditArabic("web")` and `auditArabic("phone")`; lists what reads wrong on the website and in the phone app.
+- A ready README template in Arabic and English: [`templates/README.ar-en.md`](templates/README.ar-en.md).
+- Tests: `python code/test_tools.py`. Python 3.10 or newer, no extra packages.
+
+The releases, tags, branches, issues and discussions in this repo are test fixtures: the test page links to them as
+evidence.
+
+### For AI tools
+
+[`AGENTS.md`](AGENTS.md) has the short, numbered rules for AI tools; [`llms.txt`](llms.txt) is an index of the repo.
+Give your tool the repo link, or paste it the rules file.
+
+### License
+
+The whole repo is under the [MIT license](LICENSE): copy it, change it and use it as you like; keep the
+license notice.

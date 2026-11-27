@@ -1,0 +1,33 @@
+name: "عرض خاطئ · Wrong rendering"
+description: "نص عربي يظهر خطأً على GitHub · Arabic text that shows wrong on GitHub"
+labels: ["rendering"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        <p dir="rtl">اكتب بالعربية أو بالإنجليزية. · Write in Arabic or English.</p>
+  - type: input
+    id: page
+    attributes:
+      label: "الصفحة · Page"
+      description: "رابط الصفحة أو اسم الملف · Link to the page or file name"
+    validations:
+      required: true
+  - type: dropdown
+    id: where
+    attributes:
+      label: "أين رأيته؟ · Where did you see it?"
+      options:
+        - "الموقع · Website"
+        - "تطبيق الهاتف (أندرويد) · Phone app (Android)"
+        - "تطبيق الهاتف (iOS) · Phone app (iOS)"
+        - "غير ذلك · Other"
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: "ما الذي يظهر خطأً؟ · What shows wrong?"
+      description: "النص كما كتبته، وما ظهر، وصورة إن أمكن · The text as written, what showed, and a screenshot if you can"
+    validations:
+      required: true
