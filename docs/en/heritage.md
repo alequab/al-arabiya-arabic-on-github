@@ -14,7 +14,7 @@ Marks: ✔ works · ⚠ works with a flaw · ✘ doesn't work
 | Part | Verdict | How |
 |---|---|---|
 | Opening (فاتحة) | ✔ | Bismillah and the prayer as centered `<h3 dir="rtl">` lines, then «أما بعد» |
-| Dividers | ✔ | A line of ornaments in `<div align="center">`: `ـــــ ۞ ـــــ`, `❁ ❁ ❁`, `✿ ✿ ✿`, `◆ ◇ ◆` (not `۝`: it is made to hold a verse number and draws as an empty circle) |
+| Dividers | ✔ | A line of ornaments in `<div align="center">`: `ـــــ ۞ ـــــ`, `❁ ❁ ❁`, `✿ ✿ ✿`, `◆ ◇ ◆` (not `۝`: it is made to hold a verse number and draws as an empty circle). More, tested on the website (S15): old `۞ ۩ ٭ ❦ ❧ ⁂ ※ ⸙`; common today `❀ ✿ ❁ ✾ ❖ ◈ ✦ ✧`; the pairs `༺ ༻` and `⊱ ⊰` are mirrored for you, so type them in reading order. ⚠ `ღ ꕥ ꧁ ꧂ ࿐` are letters of other scripts (Georgian, Vai, Javanese, Tibetan): a line that starts with one turns left to right, so start it with `&rlm;`, and type `꧂` before `꧁` (they are not mirrored). Not tried in the phone app |
 | Chapter headings | ✔ ⚠ | المقدمة, الباب الأول, فصل, الخاتمة. A symbol at the start of a heading is dropped from its link and leaves a hyphen: `#-الفاتحة` |
 | Benefit / caution notes | ✔ | Native alerts with the Arabic name in bold inside `<p dir="rtl">`. The English alert title stays |
 | Abjad numbering | ✔ | Markdown lists always number 1. 2. 3. Write أ. ب. ج. by hand, one line each, joined with `<br>` |
