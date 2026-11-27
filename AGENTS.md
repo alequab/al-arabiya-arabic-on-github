@@ -40,7 +40,7 @@ from `code/page_audit.js`, which copies the app. Evidence: `tests/lab.md` (tests
      before and `&#x2069;` after them (T44). `<small>` is removed; `<sub>`/`<sup>` make Arabic 12px (footnote marks only).
    - **7b.** Writing: Arabic punctuation (، ؛ ؟), Modern Standard Arabic, headings and buttons as verbal nouns (التثبيت, not
      ثبّت), one digit system per page (the heritage style keeps Arabic-Indic for verse numbers, footnote marks and the Hijri
-     date), product names in Latin letters.
+     date), product names in Latin letters. For each English term use the Arabic word in `docs/glossary.md`.
 8. Keep Arabic out of code spans and code blocks (the monospace font renders it thin and spaced).
    - **8a.** In Arabic text,
      inline code that starts or ends with a symbol (`&rlm;`, `<br>`, `[^1]`) gets `&lrm;` before and after it; code mixing

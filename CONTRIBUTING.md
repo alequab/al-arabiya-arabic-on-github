@@ -6,6 +6,7 @@
 
 - **وجدت عرضًا خاطئًا؟** افتح بلاغًا بالنموذج «عرض خاطئ»، واذكر الصفحة والمكان (الموقع أو التطبيق)، وأرفق صورة إن استطعت.
 - **عندك طريقة أفضل؟** اكتب الحالة اختبارًا جديدًا في آخر &lrm;`tests/lab.md`&lrm; برقم جديد (مثل T47)، فيه الطريقة المعتادة والحل، ثم اربط القاعدة به في الدليلين.
+- **عندك كلمة عربية أصح لمصطلح؟** انظر [مسرد المصطلحات](docs/glossary.md)، ثم افتح بلاغًا بالنموذج «مصطلح» واذكر الكلمة ومصدرها.
 - **غيّرت قاعدة؟** غيّرها في الدليل العربي والإنجليزي معًا، وفي &lrm;`AGENTS.md`&lrm;، حتى لا تختلف النسخ.
 - **قبل الإرسال:** شغّل الفحص والاختبارات، ثم افتح صفحتك على GitHub وشغّل &lrm;`page_audit.js`&lrm; كما في القسم 10 من الدليل.
 - **مثال خاطئ عمدًا؟** ضعه بين &lrm;`<!-- check-arabic: off -->`&lrm; و&lrm;`<!-- check-arabic: on -->`&lrm;، فلا تُبلّغ عنه أداة الفحص. أما &lrm;`page_audit.js`&lrm; فتُبلّغ عنه دائمًا، لأن GitHub يحذف التعليقات من الصفحة.
@@ -36,6 +37,8 @@ come from real screenshots or from a tool that copies the app.
   (website or app), and a screenshot if you can.
 - **Know a better way?** Add it as a new test at the end of `tests/lab.md` with the next number (T47, ...), showing the
   usual way and the fix, then link the rule to it in both guides.
+- **Know a better Arabic word for a term?** See the [glossary](docs/glossary.md#glossary), then open an issue with
+  the "Term" form: the word and its source.
 - **Changed a rule?** Change it in the Arabic and English guides and in `AGENTS.md` together, so they never disagree.
 - **Before you send:** run the checker and the tests, then open your page on GitHub and run `page_audit.js` as in
   section 10 of the guide.

@@ -6,11 +6,11 @@
 
 <div dir="rtl">
 
-[قبل وبعد](#قبل-القاعدة-وبعدها) · [الخلاصة](#الخلاصة) · [الدليل الكامل](docs/ar/guide.md) · [الأنماط](docs/ar/styles.md) · [الطراز التراثي](docs/ar/heritage.md) · [الأدوات](#الأدوات) · [للذكاء الاصطناعي](#للذكاء-الاصطناعي) · [صفحة الاختبارات](tests/lab.md) · [المساهمة](CONTRIBUTING.md) · [الترخيص](#الترخيص)
+[قبل وبعد](#قبل-القاعدة-وبعدها) · [الخلاصة](#الخلاصة) · [الدليل الكامل](docs/ar/guide.md) · [الأنماط](docs/ar/styles.md) · [الطراز التراثي](docs/ar/heritage.md) · [الأدوات](#الأدوات) · [للذكاء الاصطناعي](#للذكاء-الاصطناعي) · [صفحة الاختبارات](tests/lab.md) · [مسرد المصطلحات](docs/glossary.md) · [المساهمة](CONTRIBUTING.md) · [الترخيص](#الترخيص)
 
 </div>
 
-[Before and after](#before-and-after) · [Summary](#summary) · [Full guide](docs/en/guide.md) · [Styles](docs/en/styles.md) · [Heritage style](docs/en/heritage.md) · [Tools](#tools) · [For AI tools](#for-ai-tools) · [Test page](tests/lab.md) · [Contributing](CONTRIBUTING.md) · [License](#license)
+[Before and after](#before-and-after) · [Summary](#summary) · [Full guide](docs/en/guide.md) · [Styles](docs/en/styles.md) · [Heritage style](docs/en/heritage.md) · [Tools](#tools) · [For AI tools](#for-ai-tools) · [Test page](tests/lab.md) · [Glossary](docs/glossary.md#glossary) · [Contributing](CONTRIBUTING.md) · [License](#license)
 
 </div>
 

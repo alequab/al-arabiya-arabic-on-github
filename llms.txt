@@ -13,6 +13,7 @@
 - [README styles (Arabic)](docs/ar/styles.md): the same, showing each style live in Arabic.
 - [Heritage style (English)](docs/en/heritage.md): a README style from the classical Arabic book, with copy-paste parts.
 - [Heritage style (Arabic)](docs/ar/heritage.md): the same, shown live.
+- [Glossary](docs/glossary.md): the one Arabic word for each English term, with meaning, other words seen, sources and status.
 
 ## Evidence
 

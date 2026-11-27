@@ -95,6 +95,7 @@ These don't change how GitHub draws the page; they make the Arabic read well (ad
 - One digit system per page: Western (`2026`) or Arabic-Indic (`٢٠٢٦`), not both. The heritage style keeps
   Arabic-Indic for verse numbers, margin notes and the Hijri date only.
 - Names of products and tools stay in Latin letters (GitHub, React, npm); translate common words (ملف, مجلد, تثبيت).
+  Each English term has one Arabic word: see the [glossary](../glossary.md#glossary).
 
 ## 4. The RTL div: when it helps and when it hurts
 
