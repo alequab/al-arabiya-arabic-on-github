@@ -887,8 +887,24 @@ A secret Gist with three files (`دليل-قصير.md`, `notes.txt`, `sample.py`
 
 ### T43
 
-Wiki: not tested yet. GitHub allows a wiki only in public repositories (or on a paid plan), and this repo was private
-when the tests were made.
+Wiki (2026-11-27, after the repo went public; GitHub allows a wiki only in public repositories or on a paid plan).
+Pages: [Home](https://github.com/alequab/al-arabiya-arabic-on-github/wiki), `دليل-التثبيت`, `دليل-GitHub`,
+`⁧دليل-GitHub-معزول⁩` (name in RLI…PDI), `_Sidebar.md`, `_Footer.md`. Measured on github.com.
+
+- ✘ Wiki pages get **no automatic direction**, like release notes: outside the RTL div an Arabic line is left to
+  right with its full stop on the wrong side, and `&rlm;` at the start does not help.
+- ✔ Inside `<div dir="rtl">` everything works: headings, paragraphs, lists, a table (from the right). The sidebar
+  and footer the same.
+- ✔ A code block outside the div stays left to right; an alert outside the div with `<p dir="rtl">` inside it works.
+- ✔ Arabic page names: the file `دليل-التثبيت.md` becomes the page «دليل التثبيت»; `[[دليل التثبيت]]` and
+  `[[الرئيسية|Home]]` link correctly.
+- ⚠ The page title above the page is left to right and on the left: an Arabic-only name reads right; «دليل GitHub»
+  shows «GitHub» on the wrong side (title and page list). ✔ The name in RLI…PDI reads right, but the marks become
+  part of the page address.
+- ⚠ The page list sorts Arabic names after Latin ones.
+- ✔ Wiki search finds an Arabic word (`التثبيت`).
+
+Phone app not checked.
 
 ---
 

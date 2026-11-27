@@ -38,6 +38,7 @@ Places that do **not** get this, and stay left to right:
 | The repo's About text | [Section 7](#about-text) |
 | Issue, PR and release titles in lists | Wrap in RLI…PDI ([section 7](#titles-issues-prs-releases-labels)) |
 | Release notes | Put the Arabic inside `<div dir="rtl">` ([section 7](#release-notes)) |
+| Wiki pages, sidebar and footer | Put the Arabic inside `<div dir="rtl">`; `&rlm;` does not help. Page names: Arabic only, or the name in RLI…PDI ([T43](../../tests/lab.md#t43)) |
 | `.txt` and code files | Shown as code, left to right: write Arabic docs in `.md` ([T28](../../tests/lab.md#t28)) |
 | GitHub's own footnote list | Make footnotes by hand ([section 5](#footnotes)) |
 

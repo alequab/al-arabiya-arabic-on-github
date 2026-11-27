@@ -91,7 +91,9 @@ the Latin word lands on the wrong side (test S13). Details: `docs/en/styles.md`.
       the Arabic in RLI…PDI, a bilingual line whole as in rule 15 (T41, T42, T46). Search matches letters exactly: no tatweel or vowel marks in titles or
       words people will search for (T40).
 16. Release notes: Arabic part inside `<div dir="rtl">` (release notes get no automatic direction), then `---`, then
-    the English part.
+    the English part. Wiki pages, `_Sidebar.md` and `_Footer.md` get no automatic direction either: Arabic inside
+    the RTL div (`&rlm;` does nothing). Wiki page titles are left to right: an Arabic-only name, or the name in RLI…PDI
+    (the marks become part of the page URL) (T43).
 
 ## Names
 
